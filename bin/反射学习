@@ -1,0 +1,39 @@
+1.获得Class对象：
+  每个类被加载后，在JVM都存在该类的Class对象。怎么获取这个对象呢。
+  1.Class.forName("全限定类名")；如：Class.forName("com.mysql.jdbc.Driver")
+  2.某类的class属性。     如：Person.class
+  3.某对象的getClass方法。如：obj.getClass;
+  
+2.从Class中获取信息：
+  从Class对象可以获得很多的信息，举几个例子：
+  
+  下面4个方法用于获取Class对应类所包含的方法
+  1.Method getMethod(String name,Class<?>...paramterTypes):返回此Class对象对应类name的，带指定形参列表paramterTypes的方法public方法
+  2.Method[] getMethods():返回所有public的方法
+  3.Method getDeclaredMethod(String name,Class<?>..parameterTypes):返回此Class对象对应类的，带指定形参列表的方法，与方法权限无关
+  4.Method getDeclaredMethods():返回所有的方法，无权限无关
+  
+  下面4个方法用于获取Class对应类所包含的域--成员变量
+  1.Field getField(String name):返回此Class对象对应类的，指定名称的public成员变量
+  2.Field[] getFields():返回所有的public成员变量
+  3.Field getDeclaredField(String name):返回指定名称的成员变量，权限无关
+  4.Field[] getDeclaredFields(): 返回所有的成员变量。权限无关
+
+ Field对象：
+  在java的反射中,通过字段获取对象,是通过   public Object get(Object obj)
+ 1.字段不是静态字段的话,要传入反射类的对象.如果传null是会报 
+   java.lang.NullPointerException 
+ 2.但是如果字段是静态字段的话,传入任何对象都是可以的,包括null ----静态字段随便输入一个对象，无所谓
+ 
+    获取某个public属性的值：
+  Field nameField = emp.getClass().getField("name");  
+  System.out.println("name的值：" + nameField.get(emp));  
+
+   获取某个private属性的值：
+  Field ageField = emp.getClass().getDeclaredField("age"); 
+  ageField.setAccessible(true);  //必须设置可以访问，否则报错！！！ 
+  System.out.println("age的值：" + ageField.get(emp));
+  
+   获取某个static属性的值：
+  Field nameField = emp.getClass().getField("name");  
+  System.out.println("name的值：" + nameField.get(“随便对象”)); 
