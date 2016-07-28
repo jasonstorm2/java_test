@@ -7,7 +7,6 @@ import java.io.PushbackReader;
 public class ddddd {
 	public static void main(String[] args) {
 		try (
-
 		PushbackReader pr = new PushbackReader(new FileReader("FileInputStreamTest.txt"), 64);
 
 		) {
