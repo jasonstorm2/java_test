@@ -19,7 +19,7 @@ public class ArrarysSort {
 		CharBuffer c = null;
 		int d = 1;
 		
-		
+		long iii = 1l;
 	}
 
 }
