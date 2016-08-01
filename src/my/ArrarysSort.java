@@ -17,7 +17,7 @@ public class ArrarysSort {
 		InputStream s = null;
 		Reader r  = null;
 		CharBuffer c = null;
-		
+		int d = 1;
 	}
 
 }
