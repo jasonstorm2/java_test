@@ -18,6 +18,8 @@ public class ArrarysSort {
 		Reader r  = null;
 		CharBuffer c = null;
 		int d = 1;
+		
+		
 	}
 
 }
