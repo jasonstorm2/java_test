@@ -21,5 +21,15 @@ public class FileInOutStremTest{
 	      System.out.println(new String(buf,0,len)); //String构造函数把字节数组转化为字符串
 	      in.close();//关闭输入流
 	      
+	      
+	      /***文件夹下的文件***/
+	      //  /..或者 ..\表示当前路径的上一级路径
+	      File fi = new File("D:/JarStore/..");
+	      File[] fl = fi.listFiles();
+	      System.out.println("文件夹下的文件");
+	      for (int i = 0; i < fl.length; i++) {			
+			System.out.println(fl[i].getAbsolutePath());
+		}
+	      
 	   }
 	}

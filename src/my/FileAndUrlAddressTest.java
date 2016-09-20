@@ -26,7 +26,7 @@ import java.net.URL;
  * 
  *         scheme，通信协议方案，下表列出 Scheme 属性的有效方案名称。
  * 
- *         file 资源是本地计算机上的文件。格式file://
+ *         file 资源是本地计算机上的文件。格式file:///(注意是三个斜杠)
  * 
  *         ftp 通过 FTP访问资源。格式 FTP://
  * 
@@ -63,10 +63,10 @@ import java.net.URL;
 public class FileAndUrlAddressTest {
 	public static void main(String[] args) throws Exception {
 		File file = new File("D:/我的批处理/2.bat");
-		System.out.println("File文件路径："+file.getAbsolutePath());
+		System.out.println("File文件路径："+file.getAbsolutePath());//File文件路径：D:\我的批处理\2.bat
 		URL url0 = file.toURL();//废弃，建议用下面的方式
 		URL url = file.toURI().toURL();
-		System.out.println("URL文件路径: "+url.getPath());	
+		System.out.println("URL文件路径: "+url.getPath());	//URL文件路径: /D:/我的批处理/2.bat---多了一个斜杠？
 		FileAndUrlAddressTest ft = new FileAndUrlAddressTest();
 		URL url2 = ft.getURL();
 		System.out.println("URL2文件路径: "+url2.getPath());	

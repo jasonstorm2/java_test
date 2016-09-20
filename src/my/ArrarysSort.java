@@ -14,13 +14,6 @@ public class ArrarysSort {
 		System.out.println(System.getProperty("user.dir"));
 		String separator =  File.separator;
 		System.out.println();
-		InputStream s = null;
-		Reader r  = null;
-		CharBuffer c = null;
-		int d = 1;
-		
-		long iii = 1l;
-		String again;
 	}
 
 }

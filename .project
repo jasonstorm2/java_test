@@ -13,12 +13,12 @@
 	</buildSpec>
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
-	</natures>	
-		<linkedResources>
+	</natures>
+	<linkedResources>
 		<link>
 			<name>buildpath</name>
 			<type>2</type>
-			<location>D:\WorkSpace1\Java_Test\put.class</location>
+			<locationURI>WorkSpace1/Java_Test/put.class</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>
