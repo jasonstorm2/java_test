@@ -33,7 +33,8 @@ import utils.utils;
      对于某些类型的对象，其状态是瞬时的，这样的对象是无法保存其状态的。例如一个Thread对象或一个FileInputStream对象 ，
      对于这些字段，我们必须用transient关键字标明，否则编译器将报措。 
             
-     另外 ，串行化可能涉及将对象存放到 磁盘上或在网络上发达数据，这时候就会产生安全问题。因为数据位于Java运行环境之外，不在Java安全机制的控制之中。
+     另外 ，串行化可能涉及将对象存放到 磁盘上或在网络上发达数据，这时候就会产生安全问题。
+     因为数据位于Java运行环境之外，不在Java安全机制的控制之中。
      对于这些需要保密的字段，不应保存在永久介质中 ，或者不应简单地不加处理地保存下来 ，为了保证安全性。
      应该在这些字段前加上transient关键字。
     3.默认序列化机制：
@@ -71,7 +72,7 @@ public class SerializableTest {
 			oo.close();
 			fo.close();//为什么不加上这句呢
 			System.out.println("写入成功");
-			System.out.println(stu2);;
+			System.out.println(stu2);
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -131,7 +132,7 @@ class Student implements Serializable{
 	}	
 	
 	/*
-	 * 在Person类中添加两个方法：writeObject()与readObject()
+	 * 在Student类中添加两个方法：writeObject()与readObject()
 	 * private方法，那么它们是如何被调用的呢？毫无疑问，是使用反射
 	 */
 	private void writeObject(ObjectOutputStream out) throws IOException {
@@ -163,7 +164,7 @@ class Student implements Serializable{
 class Student2 implements Externalizable{
 	
 	 private static class InstanceHolder {
-	        private static final Student2 instatnce = new Student2("John", 31,"MALE",new ArrayList<Integer>(){{add(1);add(2);}});
+	        private static final Student2 instatnce = new Student2("John", 31,"MALE",new ArrayList<Integer>(){{add(1);add(2);}},new Teacher1("ZhangHen",50));
 	    }
 
 	    public static Student2 getInstance() {
@@ -171,8 +172,8 @@ class Student2 implements Externalizable{
 	    }
 	
 	    
-	    public static Student2 getInstance2() {
-	        return new Student2("John", 31,"MALE",new ArrayList<Integer>(){{add(1);add(2);}});
+	    public static Student2 getInstance2() {//并非单例模式，每次调用都会生成一个新的对象
+	        return new Student2("John", 31,"MALE",new ArrayList<Integer>(){{add(1);add(2);}},new Teacher1("ZhangHen",50));
 	    }
 	    
 	    /**
@@ -190,7 +191,7 @@ class Student2 implements Externalizable{
 	 */
 	private static final long serialVersionUID = 1L;
 	List<Integer> list;
-	
+	Teacher1 t;
 	String name;
 	transient int age ;
 	String sex;
@@ -199,12 +200,13 @@ class Student2 implements Externalizable{
 		System.out.println("Student无参数构造器");
 	}
 	
-	public Student2(String name,int age,String sex,List<Integer> list) {
+	public Student2(String name,int age,String sex,List<Integer> list,Teacher1 t) {
 		System.out.println("Student有参数构造器");
 		this.name = name;
 		this.age = age;
 		this.sex = sex;
 		this.list = list;
+		this.t = t;
 	}	
 	
 	/*
@@ -229,7 +231,7 @@ class Student2 implements Externalizable{
 			}
 		}
 		
-		return "name:"+name+"\nage:"+age+"\nsex:"+sex+"\nlist:"+l;		
+		return "name:"+name+" age:"+age+" sex:"+sex+" list:"+l+" teacher:"+t.getName()+"age:"+t.getAge();		
 	}
 
 	@Override
@@ -239,6 +241,7 @@ class Student2 implements Externalizable{
 		out.writeObject(sex);
 		out.writeInt(age);
 //		out.writeObject(list);
+		out.writeObject(t);
 	}
 
 	@Override
@@ -248,6 +251,7 @@ class Student2 implements Externalizable{
 		sex = (String) in.readObject();
 		age = in.readInt();
 //		list = (List<Integer>) in.readObject();
+		t = (Teacher1)in.readObject();
 	}
 }
 

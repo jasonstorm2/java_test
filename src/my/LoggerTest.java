@@ -14,6 +14,7 @@ public class LoggerTest {
 	public LoggerTest(){
 		logger.debug("wtf");
 		logger.warn("destny");		
+		logger.debug("lalala");
 	}
 	public static void main(String[] args) {
     //2.¶ÁÈ¡ÅäÖÃÎÄ¼ş
