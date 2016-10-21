@@ -13,17 +13,11 @@ import java.util.List;
 
 import my.LoggerTest;
 
-import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
 
 import com.mysql.fabric.xmlrpc.base.Array;
 
 //编写操作数据库的dao类
 public class NetJavaSession {
-	static Logger logger = Logger.getLogger(LoggerTest.class);
-	static{
-		PropertyConfigurator.configure("log4j.properties");
-		}
 
     /**
      * 解析出保存对象的sql语句
@@ -43,7 +37,6 @@ public class NetJavaSession {
         Field[] fields = c.getFields();
         // 得到对象类的名字
         String cName = c.getName();
-        logger.debug("得到对象类的名字:"+cName);
         
         // 类名==》表名
         String tableName = cName.substring(cName.lastIndexOf(".") + 1,
@@ -129,7 +122,6 @@ public class NetJavaSession {
             // Statement statement=(Statement) con.createStatement();
             PreparedStatement psmt = con.prepareStatement(sql);
             psmt.executeUpdate();
-            logger.error("lalalalalala");
             return 1;
         } catch (SQLException e) {
             e.printStackTrace();
