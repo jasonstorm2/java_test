@@ -1,4 +1,5 @@
 package Chapter18_ClassLoadAndReflection;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Enumeration;
@@ -28,5 +29,15 @@ public class ClassLoaderPropTest {
 		//根加载器 没有 继承ClassLoader抽象类。所以，返回的是Null
 		//但实际上 扩展类加载器 的 父类加载器 是 根类加载器，只是，根类加载器 并不是 java实现的。
 		
+		System.out.println("------------------------------");
+		System.out.println(ClassLoaderPropTest.class.getResource(""));
+		System.out.println(ClassLoaderPropTest.class.getResource("/"));
+		
+		URL url = ClassLoaderPropTest.class.getResource("");	
+		
+	}
+	
+	public void printContent(String path){
+		File file = new File("");
 	}
 }
