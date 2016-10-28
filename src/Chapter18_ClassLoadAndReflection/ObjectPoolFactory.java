@@ -1,4 +1,4 @@
-package Chapter18;
+package Chapter18_ClassLoadAndReflection;
 
 import java.io.FileInputStream;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package Chapter18;
+package Chapter18_ClassLoadAndReflection;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Enumeration;
