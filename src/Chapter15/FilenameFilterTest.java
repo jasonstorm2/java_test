@@ -28,7 +28,7 @@ public class FilenameFilterTest {
 		}
 		
 		//自己写的 函数式接口
-		new FilenameFilterTest().bool(stringla->stringla.endsWith("la"));//重写了接口的方法，并实例化一个接口对象。一次对象最为bool的参数
+		new FilenameFilterTest().bool(ss->ss.endsWith("la"));//重写了接口的方法，并实例化一个接口对象。一次对象最为bool的参数
 		
 
 	}

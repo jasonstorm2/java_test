@@ -15,15 +15,15 @@ public class FileAddressTest {
 	public static void main(String[] args) {
 		try {
 			//路径：******根目录下，与("./FileInputStreamTest.txt")结果一样
-			FileInputStream fis = new FileInputStream("FileInputStreamTest.txt");
+			FileInputStream fis = new FileInputStream("FileInputStreamTest.txt");// 调用了File()方法
 			//路径：******.class的当前目录，与("./FileInputStreamTest.txt")结果一样
 			InputStream inputFile2 = FileTest.class.getResourceAsStream("FileInputStreamTest.txt");
 			File file = new File("");  //-----------------------------------创建对象并非创建了一个文件或文件夹？--管道左右
-			System.out.println(file.getAbsolutePath());//路径：D:\WorkSpace1\Java_Test
+			System.out.println("new File(''):"+file.getAbsolutePath());//路径：D:\WorkSpace1\Java_Test
 			File file1 = new File(".");  //-----------------------------------创建对象并非创建了一个文件或文件夹？
-			System.out.println(file1.getAbsolutePath());//路径：D:\WorkSpace1\Java_Test\.
+			System.out.println("new File('.'):"+file1.getAbsolutePath());//路径：D:\WorkSpace1\Java_Test\.
 			File file2 = new File("file2.txt");  //-----------------------------------创建对象并非创建了一个文件或文件夹？
-			System.out.println(file2.getAbsolutePath());//路径：D:\WorkSpace1\Java_Test\file2.txt
+			System.out.println("new File('file2.txt'):"+file2.getAbsolutePath());//路径：D:\WorkSpace1\Java_Test\file2.txt
 			/***创建文件***/
 //			file.createNewFile(); //名字为空，无法创建
 			file1.createNewFile(); //一个.也没有办法创建

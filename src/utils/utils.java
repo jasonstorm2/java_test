@@ -3,7 +3,14 @@ package utils;
 import java.io.File;
 import java.io.InputStream;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.Properties;
+import java.util.Map.Entry;
 
 public class utils {
 	
@@ -39,5 +46,42 @@ public class utils {
 		} 
 		return serPath;
 	}
+	
+	/**
+	 * 对 Map<String, Integer> 的value进行排序，由大到小，
+	 * @param oldMap
+	 * @return
+	 */
+    public static Map<String, Integer> sortMap(Map<String, Integer> oldMap) {
+        ArrayList<Map.Entry<String, Integer>> list = new ArrayList<Map.Entry<String, Integer>>(oldMap.entrySet());  
+        Collections.sort(list, new Comparator<Map.Entry<String, Integer>>() {  
+  
+            @Override  
+            public int compare(Entry<java.lang.String, Integer> arg0,  
+                    Entry<java.lang.String, Integer> arg1) {  
+//                return arg0.getValue() - arg1.getValue();  
+            	return arg1.getValue() - arg0.getValue();
+            }  
+        });  
+        Map<String, Integer> newMap = new LinkedHashMap<String, Integer>();  
+        for (int i = 0; i < list.size(); i++) {  
+            newMap.put(list.get(i).getKey(), list.get(i).getValue());  
+        }  
+        return newMap;  
+    }
+    
+    /**
+     * 打印map
+     * @param map
+     */
+    public static void printMap(Map map){  
+        System.out.println("===================mapStart==================");  
+        Iterator it = map.entrySet().iterator();  
+        while(it.hasNext()){  
+            Map.Entry entry = (Map.Entry) it.next();  
+            System.out.println(entry.getKey() + ":" + entry.getValue());  
+        }  
+        System.out.println("===================mapEnd==================");  
+    }
 
 }

@@ -6,6 +6,22 @@ import java.net.URL;
 
 
 /**
+ * 
+ * UNC(Universal Naming Convention) / 通用命名规则，也叫通用命名规范、通用命名约定。
+
+   网络（主要指局域网）上资源的完整 Windows 2000 名称。它符合 \\servername\sharename 格式，
+   其中 servername 是服务器名，sharename 是共享资源的名称。
+   目录或文件的 UNC 名称可以包括共享名称下的目录路径，格式为：
+
+   \\servername\sharename\directory\filename。
+
+   对于网络服务器上的目标文件，可使用“通用命名约定 (UNC)” 
+   （ UNC：“统一命名约定”地址，用于确定保存在网络服务器上的文件位置。
+      这些地址以两个反斜线 (\\) 开头，并提供服务器名、共享名和完整的文件路径。）
+      
+   地址。这些地址以“file:\\”开始并提供服务器名、共享名和文件的完整路径。
+   例如，“file:\\server\share\path\project file.mpp”是绝对 UNC 地址。
+   
  * 尽量不要使用相对于System.getProperty("user.dir")当前用户目录的相对路径。这是一颗定时炸弹，随时可能要你的命。
  * 
  * 尽量使用URI形式的绝对路径资源。它可以很容易的转变为URI,URL，File对象
