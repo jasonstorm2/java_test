@@ -9,8 +9,7 @@ public class impleLikeExtends implements interfacePeople, interfacePerson {
 
 	}
 
-	public static void main(
-			String[] argssdfsfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfssdfsdfsdfsdfssdfsdfsdfsdfssdfsdfsdfsdfssdfsdfsdfsdfsdfsdfsdfsfsdfsdfsdf) {
+	public static void main(String[] arsf) {
 		impleLikeExtends im = new impleLikeExtends();
 		im.action();
 		im.get();

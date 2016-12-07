@@ -1,6 +1,8 @@
 package LambdaLearn;
 
+import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.List;
 import java.util.concurrent.Callable;
 
 /**
@@ -40,7 +42,20 @@ import java.util.concurrent.Callable;
  */
 
 public class doubleColonTest {
+	
+	public static Functional3 testMethodReference(){
+		System.out.println("测试::方法引用");
+		return null;
+	}
+	
+	public static String 中文(){
+		System.out.println("测试::方法引用");
+		return null;
+	}
+	
 	public static void main(String[] args) {
+		
+		Functional3 s = doubleColonTest::testMethodReference;
 		doubleColonTest d = new doubleColonTest();		
 		/*
 		 * 需要注意的是，函数式接口的名称并不是 lambda 表达式的一部分。
@@ -71,6 +86,19 @@ public class doubleColonTest {
 			return a;
 		};
 		f4.judge("lala");
+		
+		/**
+		 * lambda表达式对值封闭，对变量开放：lambda expressions close over values, not variables，
+		 */
+		int sum = 0 ;
+		List<String> list = new ArrayList<String>();
+		Functional<String> f5 = (a) -> {
+//			sum = sum + 1;       //错误，  对值封闭，不能改变外部类的值
+			list.add("moment");  //正确，对变量开放
+			return a;			
+		};
+		
+		
 		
 
 		

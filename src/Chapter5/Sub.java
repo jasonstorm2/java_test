@@ -1,4 +1,6 @@
 package Chapter5;
+
+
 /**
  * 不要在父类的构造方法中调用，被子类重写 的方法
  * @author Administrator
@@ -9,6 +11,7 @@ public class Sub extends Base {
 
 	public void test() {//1
 		System.out.println("子类重写父类的方法，其name字符串长度：" + name.length());
+		Chapter15.FileTest ft = new Chapter15.FileTest();
 	}
 
 	public static void main(String[] args) {
