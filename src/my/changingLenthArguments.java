@@ -1,6 +1,12 @@
 package my;
 
-public class changingArguments {
+/**
+ * 可变长度的参数测试
+ * 方法的参数可以任意长度
+ * @author Administrator
+ *
+ */
+public class changingLenthArguments {
 	public static void printMsg(boolean set,String ...msg){
 		
 		

@@ -2,12 +2,13 @@ package Chapter5;
 
 /**
  * instanceof 与(type)类型转算以及 +,-等，都是运算符
+ * 判断的是 运行时的类型
  * @author Administrator
  *
  */
 public class InstanceofTest {
 	public static void main(String[] args) {
-		//instanceof运算符的作用是：在进行强制类型转换前，喷段前一个对象 是否是 后一个对象 的实例。是否可以成功转换
+		//instanceof运算符的作用是：在进行强制类型转换前，判断前一个对象 是否是 后一个对象 的实例。是否可以成功转换
 		
 		//声明hello时使用Object，则hello的编译类型是Object
 		//Object是所有类的父类，但，hello的实际类型是String
@@ -30,6 +31,7 @@ public class InstanceofTest {
 		
 		
 		//  instanceof 前后要有继承关系，不然会报错
+		// 判断的是 运行时的类型
 		System.out.println(aob instanceof A);//true
 		System.out.println(aob instanceof B);//false		
 		System.out.println(bob instanceof A);//true
@@ -42,10 +44,7 @@ public class InstanceofTest {
 		System.out.println("____________________________________");
 		System.out.println(aob instanceof C);
 		System.out.println(bob instanceof C);
-		//报错
-//		System.out.println(aob1 instanceof C);
-//		System.out.println(bob1 instanceof C);
-//		
+	
 
 		
 		

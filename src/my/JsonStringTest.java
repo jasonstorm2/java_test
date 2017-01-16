@@ -15,10 +15,16 @@ import com.alibaba.fastjson.JSONObject;
 public class JsonStringTest {
 	static String str = "{'def':18,'hpMax':1192}";
 	public static void main(String[] args) {
+		/**取出 一个没有储存的键名 是否报错？		----不存在的键名，值默认为0 **/
 		JSONObject obj = Utils.toJSONObject(str);
+		int numSurplus = obj.getIntValue("112");
 		int  def = Integer.valueOf(obj.getString("def"));	
+
+		System.out.println("取出 一个没有储存的键名 是否报错？:"+numSurplus);
+		System.out.println("取出 一个没有储存的键名 是否报错？:"+def);
+		
+		/**判断键名是否存在***/
 		obj.put("jiba", "la");
-		System.out.println(def);
 		System.out.println(obj.toJSONString());
 		Map<String,Map<String,String>> mapM = new HashMap<String,Map<String,String>>();
 		Map<String,List<Map<String,String>>> mapL = new HashMap<String,List<Map<String,String>>>();
@@ -49,11 +55,11 @@ public class JsonStringTest {
 		listmap.add(map2);
 //		listmap.add(map3);
 		
-		System.out.println("Map<String,String>的转化为json的格式：                    "+JSON.toJSONString(map));	
-		System.out.println("Map<String,Map<String,String>>的转化为json的格式：        "+JSON.toJSONString(mapM));	
-		System.out.println("List<Map<String,String>>的转化为json的格式：              "+JSON.toJSONString(listmap));	
-		System.out.println("List<Map<String,String>>  toString：                      "+listmap.toString());	
-		System.out.println("Map<String,List<Map<String,String>>>的转化为json的格式：  "+JSON.toJSONString(mapL));	
+		System.out.println("Map<String,String>鐨勮浆鍖栦负json鐨勬牸寮忥細                    "+JSON.toJSONString(map));	
+		System.out.println("Map<String,Map<String,String>>鐨勮浆鍖栦负json鐨勬牸寮忥細        "+JSON.toJSONString(mapM));	
+		System.out.println("List<Map<String,String>>鐨勮浆鍖栦负json鐨勬牸寮忥細              "+JSON.toJSONString(listmap));	
+		System.out.println("List<Map<String,String>>  toString锛�                      "+listmap.toString());	
+		System.out.println("Map<String,List<Map<String,String>>>鐨勮浆鍖栦负json鐨勬牸寮忥細  "+JSON.toJSONString(mapL));	
 
 
 	}

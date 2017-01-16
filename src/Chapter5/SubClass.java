@@ -43,10 +43,7 @@ public class SubClass extends BaseClass{
 		ploybc.test();
 		//ploybc编译时类型是 BaseClass,而BaseClass类没有提供sub()方法，所以这句代码编译时会出错
 		//虽然ploybc引用变量 实际上包含sub()方法（可以用反射来执行该方法）,但因为它的编译时类型为BaseClass所以，编译时无法调用sub()方法。
-//		ploybc.sub();  
-		
-		
-		
+//		ploybc.sub(); 		
 		
 	}
 

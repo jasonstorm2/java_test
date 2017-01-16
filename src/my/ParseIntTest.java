@@ -1,5 +1,10 @@
 package my;
 
+/**
+ * 判断字符串是能够转换成 int格式
+ * @author Administrator
+ *
+ */
 public class ParseIntTest {
 	public static void main(String[] args) {
 		System.out.println(isInteger("s"));

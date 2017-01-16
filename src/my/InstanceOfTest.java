@@ -1,5 +1,10 @@
 package my;
 
+/**
+ * 接口 和 继承 对象类型的判断instanceof
+ * @author Administrator
+ *
+ */
 interface A{}
 class B implements A{
  
@@ -21,7 +26,7 @@ public class InstanceOfTest {
       res = b instanceof B;
       System.out.println("b instanceof B: " + res);
       
-    System.out.println("\ninstanceoftest test case 2: ------------------");   
+    System.out.println("instanceoftest test case 2: ------------------");   
     a=new B();
     b=new B();
     
@@ -38,8 +43,9 @@ public class InstanceOfTest {
     System.out.println("b instanceof B: " + res);
    
     System.out.println("\ninstanceoftest test case 3: ------------------");
-    B b2=(C)new C();
     
+    /*instanceof判断的是运行时类型*/
+    B b2=new C();    
     res = b2 instanceof A;
     System.out.println("b2 instanceof A: " + res);
     

@@ -20,9 +20,9 @@ public class ObjectReferenceTest {
 	}
 	
 	public static void main(String[] args) {
-		ObjectReferenceTest ob = new ObjectReferenceTest();
-		
+		ObjectReferenceTest ob = new ObjectReferenceTest();		
 		Map<String, String> map = ob.map;
+		
 		map.put("3", "test");
 		for (Entry<String, String> en : map.entrySet()) {
 			System.out.println("key:"+en.getKey());

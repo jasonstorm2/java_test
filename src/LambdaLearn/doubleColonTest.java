@@ -55,7 +55,8 @@ public class doubleColonTest {
 	
 	public static void main(String[] args) {
 		
-		Functional3 s = doubleColonTest::testMethodReference;
+		/**有空再来修改2017.1**/
+//		Functional3 s = doubleColonTest::testMethodReference;
 		doubleColonTest d = new doubleColonTest();		
 		/*
 		 * 需要注意的是，函数式接口的名称并不是 lambda 表达式的一部分。
