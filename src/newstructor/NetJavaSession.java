@@ -113,8 +113,16 @@ public class NetJavaSession {
      * @return：方法执行的结果;1:表示成功，0:表示失败
      */
     public int saveObject(Object object) {
+    	String databaseName = "blogSystem";
     	//链接数据库
-        Connection con = Connect2DBFactory.getDBConnection();
+        Connection con = Connect2DBFactory.getDBConnection(databaseName);      
+       
+        // 类名==表名
+        String cName = object.getClass().getName();
+        String tableName = cName.substring(cName.lastIndexOf(".") + 1,
+                cName.length());
+        //判断表是否存在，不存在则创建        
+        Connect2DBFactory.createTable(tableName, databaseName);
         //获得sql语句
         String sql = getSaveObjectSql(object);
         //操作数据库
@@ -155,7 +163,8 @@ public class NetJavaSession {
         String sql = "select * from " + tableName + " where Pwd=" + Id;
         System.out.println("查找sql语句：" + sql);
         // 获得数据库链接
-        Connection con = Connect2DBFactory.getDBConnection();
+        String databaseName = "blogSystem";
+        Connection con = Connect2DBFactory.getDBConnection(databaseName);
         // 创建类的实例
         Object obj = null;
         try { 

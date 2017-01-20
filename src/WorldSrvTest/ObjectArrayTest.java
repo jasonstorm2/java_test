@@ -29,10 +29,10 @@ public class ObjectArrayTest {
 		ll.size();
 		ll.get(0);
 
-		Iterator iter=ll.iterator();
+		Iterator<String> iter=ll.iterator();
 		
 		while(iter.hasNext()){
-			String s = (String) iter.next();
+			String s = iter.next();
 			
 			System.out.println(s);
 		}
