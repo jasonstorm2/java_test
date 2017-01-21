@@ -9,8 +9,6 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Logger;
 
-import com.mysql.jdbc.log.Log;
-
 public class AtomicIntegerTest {
 
     static long randomTime() {
