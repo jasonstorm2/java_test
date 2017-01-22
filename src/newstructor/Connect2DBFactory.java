@@ -85,7 +85,7 @@ public class Connect2DBFactory {
 			DatabaseMetaData metadata = con.getMetaData();
 			ResultSet rs = metadata.getTables(null, null, tableName, null);
 			if (rs.next()) {
-				System.out.println("Table " + tableName + " exist");
+				System.out.println("表 " + tableName + " 存在，退出");
 				return;
 				/*
 				 * 判断表中是否有 某名字的列 rs = metadata.getColumns(null, null, tableName,
@@ -97,7 +97,7 @@ public class Connect2DBFactory {
 				 * }
 				 */
 			} else {
-				System.out.println("Table " + tableName + " not exist");
+				System.out.println("表 " + tableName + " 不存在，那么创建该表");
 				Statement st = con.createStatement();
 				// 操作数据库
 				st.execute(sqlStr);
