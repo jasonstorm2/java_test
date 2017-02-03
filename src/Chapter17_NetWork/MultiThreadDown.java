@@ -1,5 +1,10 @@
 package Chapter17_NetWork;
 
+/**
+ * 多线程下载测试
+ * @author Administrator
+ *
+ */
 public class MultiThreadDown {
 	public static void main(String[] args) throws Exception {
 		final DownUtil downUtil = new DownUtil("file:///D:/Test/source/xxx.rmvb", "D:\\Test\\destination\\xxx.rmvb", 4);

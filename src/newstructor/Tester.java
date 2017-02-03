@@ -1,5 +1,12 @@
 package newstructor;
 
+/**
+ * 用 bean对象 和数据库条目 一一对应
+ * 
+ * 使用 beanObject 操作数据库
+ * @author Administrator
+ *
+ */
 public class Tester {
 	
 	public static final int TESTNUMBER = 0;

@@ -3,7 +3,6 @@ package newstructor;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -107,5 +106,22 @@ public class Connect2DBFactory {
 			e.printStackTrace();
 		}
 	}
+	
+//	/**
+//	 * 检查某个字段是否存在
+//	 * @param id
+//	 * @param conn
+//	 * @return
+//	 * @throws Exception
+//	 */
+//	public static boolean isIdExist(int id,Connection conn) throws Exception{
+//		boolean isExist = false;
+//		DatabaseMetaData metadata = conn.getMetaData();
+//		ResultSet rs = metadata.getColumns(null, null, id, null);
+//		if (rs.next()) {
+//			isExist = true;
+//		}
+//		return isExist;
+//	}
 	
 }

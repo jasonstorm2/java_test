@@ -1,5 +1,3 @@
-package Chapter17_NetWork;
-
 /**
  * IP地址 用于唯一的标识 网络中的一个 通信实体，可以是一台主机，一个打印机，或路由的某个端口
  * 基于IP协议网络中传输的 数据包，都必须使用ip地址来 进行标识：数据包 必须包括 一个源IP地址 和 一个目标IP地址
@@ -28,6 +26,3 @@ package Chapter17_NetWork;
  * @author Administrator
  *
  */
-public class IpTest {
-
-}

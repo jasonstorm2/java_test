@@ -10,9 +10,21 @@ import java.util.Date;
 
 /**
  * URL: uniform resource locator 统一资源定位器，用于指向网络中的资源，有定位作用
- * URL格式： protocol://host:port/resourceName      协议名，主机，端都，资源名
- * URI uniform resource identifiers 统一资源标识符，唯一作用就是解析
+ * URL格式： protocol://host:port/resourceName      协议名，主机，端口，资源名
+ * URI uniform resource identifiers 统一资源标识符，不能定位任何资源，唯一作用就是解析
  * URL 不仅可以解析，而且包含一个可打开到该资源的输入流。。URL可以理解成一个URI的特例。
+ * 
+ * URL类提供的方法：
+ * 
+ * String getFile（） 获取该URL的资源名
+ * String getHost() 获取主机名
+ * String getPate() 获取该URL的路径部分
+ * int getPort() 获取该URL的端口号
+ * String getProtocol() 获取该URL的协议名
+ * String getQuery() 获取该URL的 查询字符串部分
+ * URLConnection openConnection() 返回一个URLConnection 对象，它代表了与 URL 所引用的远程对象的连接。
+ * InputStream openStream()  打开与此URL的连接，并返回一个用于读取该 URL资源的InputStream对象--通过该方法可以很方便的读取远程资源，
+ * 甚至实现多线程下载
  */
 public class DownUtil {
 	private String path;

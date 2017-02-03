@@ -12,6 +12,12 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.Map.Entry;
 
+import org.apache.commons.lang3.StringUtils;
+
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
+
 public class utils {
 	
 	/**
@@ -83,5 +89,31 @@ public class utils {
         }  
         System.out.println("===================mapEnd==================");  
     }
+    
+	public static JSONObject toJSONObject(String str) {
+		if (StringUtils.isEmpty(str) || !isJSONString(str)) {
+			str = "{}";
+		}
+		return JSON.parseObject(str);
+	}
+	
+	/**
+	 * ÊÇ·ñÎªJSON×Ö·û´®
+	 * @param str
+	 */
+	public static boolean isJSONString(String str) {
+		boolean ret = false;
+		if (str != null && str.length() >= 2 && str.startsWith("{") && str.endsWith("}")) {
+			ret = true;
+		}
+		return ret;
+	}
+	
+	public static JSONArray toJSONArray(String str) {
+		if (StringUtils.isEmpty(str)) {
+			str = "[]";
+		}
+		return JSON.parseArray(str);
+	}
 
 }

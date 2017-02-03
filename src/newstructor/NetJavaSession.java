@@ -11,11 +11,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import my.LoggerTest;
-
-
-import com.mysql.fabric.xmlrpc.base.Array;
-
 //编写操作数据库的dao类
 public class NetJavaSession {
 
@@ -26,46 +21,32 @@ public class NetJavaSession {
      *            ：需要保存的对象
      * @return：保存对象的sql语句
      */
-	public static String getSaveObjectSql(Object object){
+	public String getSaveObjectSql(Object object){
         // 定义一个sql字符串
         String sql = "insert into ";
-        // 得到对象的类
-        Class c = object.getClass();
-        // 得到对象中所有的方法
+        Class<? extends Object> c = object.getClass();
         Method[] methods = c.getMethods();
-        // 得到对象中所有的属性
-        Field[] fields = c.getFields();
-        // 得到对象类的名字
         String cName = c.getName();
         
         // 类名==》表名
-        String tableName = cName.substring(cName.lastIndexOf(".") + 1,
+        String tableName = cName.substring(cName.lastIndexOf(".") + 1,  //newstructor.UserInfo
                 cName.length());
         
-        sql += tableName + "("; //  sql语句
+        sql += tableName + "("; 
         
         List<String> mList = new ArrayList<>();
         List<Object> vList = new ArrayList<Object>();
-        List<Object> mm =  Arrays.asList("");	
 
-        //遍历对象中所有的方法
-        //得到所有方法的名字，放入list中，以这个list
         for (Method method : methods){
-        	//得到方法的名称
             String mName = method.getName();
             
             if (mName.startsWith("get") && !mName.startsWith("getClass")){
             	//方法名去掉get之后可以代表数据库表的字段名
                 String fieldName = mName.substring(3, mName.length());
-                //名字逐一放入mlist当中
                 mList.add(fieldName);
                 System.out.println("字段名字----->" + fieldName);
                 
                 try {
-                	//返回  对象调用此方法的返回值
-//                	UserInfo users = new UserInfo();
-//                	users.setName("edison");
-//                	users.getName();
                     Object value = method.invoke(object);
                     System.out.println("执行方法返回的值：" + value);
                     if (value instanceof String) {
@@ -173,25 +154,20 @@ public class NetJavaSession {
             ResultSet set = stm.executeQuery(sql);
             // 得到对象的方法数组
             Method[] methods = c.getMethods();
-            // 遍历结果集
             int i=1;
             while (set.next()) {
             	System.out.println("while遍历多少遍："+i);
             	i++;
                 obj = c.newInstance();
                 
-                // 遍历对象的方法
                 for (Method method : methods) {
                     String methodName = method.getName();
-                    // 如果对象的方法以set开头
                     if (methodName.startsWith("set")) {
-                        // 根据方法名字得到数据表格中字段的名字
                         String columnName = methodName.substring(3,
                                 methodName.length());
-                        // 得到方法的参数类型
                         Class[] parmts = method.getParameterTypes();
                         if (parmts[0] == String.class) {
-                            // 如果参数为String类型，则从结果集中按照列名取得对应的值，并且执行改set方法
+                            // 该set方法，给对象赋值
                             method.invoke(obj, set.getString(columnName));                            
                         }
                         if (parmts[0] == int.class) {

@@ -8,12 +8,19 @@ import java.net.UnknownHostException;
  * InetAddress 类本身没有提供太多的功能，它代表一个IP地址对象
  * InetAddress 有两个子类 Inet4Address Inet6Address
  * InetAddress 没有构造器，而是提供了两个静态方法 来获取 InetAddress实例：getByName  getByAddress
+ * InetAddress类 还提供了一个获取本机的 InetAddress对象的方法 getLocalHost();
+ * 
+ * isReachable()方法，用于测试 是否能够达到该地址！该方法将尽最大的努力 试图达到主机，但防火墙和服务器配置 可能阻塞请求，
+ * 使得它在 访问某些特定的端口时，处于不可达到状态。如果可以获得权限，典型的实现将使用 ICMP ECHO REQUEST;否则它将试图在目标主机
+ * 的端口7（ECHO）上建立TCP连接。
+ * 
+ * InetAddress类 本身没有太多的功能，它代表一个IP地址对象，是网络通信的基础。后面的介绍中将大量使用该类
  * @author Administrator
  *
  */
 public class InetAddressTest {
 	public static void main(String[] args) throws Exception {
-		InetAddress ip = InetAddress.getByName("www.baidu.com");
+		InetAddress ip = InetAddress.getByName("www.baidu1.com");
 //		InetAddress ip = InetAddress.getByAddress(new byte[]{115,(byte) 239,(byte) 210,27});
 		System.out.println("是否可以到达："+ip.isReachable(5000));
 		System.out.println("获取该InetAddress对象的全限定域名："+ip.getCanonicalHostName());
