@@ -16,9 +16,9 @@
 	<classpathentry kind="lib" path="libs/log4j-api-2.7.jar" sourcepath="D:/JarStore/apache-log4j-2.7-bin---log4j最新的版本哦/apache-log4j-2.7-bin/log4j-api-2.7-sources.jar"/>
 	<classpathentry kind="lib" path="../config"/>
 	<classpathentry kind="lib" path="libs/log4j-slf4j-impl-2.7.jar"/>
-	<classpathentry kind="lib" path="libs/zmq-3.1.0.jar" sourcepath="D:/JarStore/jzmq-master/jzmq-master/jzmq-core"/>
 	<classpathentry kind="lib" path="libs/fastjson.jar"/>
 	<classpathentry kind="lib" path="libs/mysql-connector-java-5.1.30-bin.jar"/>
 	<classpathentry kind="lib" path="E:/my/lala.jar"/>
+	<classpathentry kind="lib" path="libs/zmq-3.1.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

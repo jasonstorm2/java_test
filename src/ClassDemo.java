@@ -44,26 +44,17 @@ public class ClassDemo
 {
     
     public static void main(String[] args)
-    {
-    	
-    	 HashMap<String, String> hashMap = new HashMap<String, String>();
- 	    System.out.println("hashMap: " + hashMap);
-
-    	    hashMap.put("1", "mqboss");
-    	    hashMap.put("2", "Jboss");
-    	    System.out.println("hashMap: " + hashMap);
-    	    hashMap.clear();
-    	    System.out.println("hashMap: " + hashMap);
+    {        
+        C showc = new C();
+        showc.aa();  //子类继承了父类，先实现父类
+        System.out.println("-------------------------");
         
-//        C showc = new C();
-//        showc.aa();
-//        
-//        ClassDemo t=new ClassDemo();
-//        t.show("C");//程序类名
-//        t.show("A");
-//        t.show("B");
+        ClassDemo t=new ClassDemo();
+        t.show("C");//程序类名
+        t.show("A");
+        t.show("B");
         
-        
+        System.out.println("-------------------------");
         A show2 = new A();
         show2.aa();
         A sh = new A();

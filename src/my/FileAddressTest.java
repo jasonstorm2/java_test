@@ -13,6 +13,11 @@ import Chapter15.FileTest;
  */
 public class FileAddressTest {
 	public static void main(String[] args) {
+		String pathStr = System.getProperty("java.class.path");
+		String pathUser = System.getProperty("user.dir");
+		System.out.println("Java 类路径 :"+pathStr); //  Java 类路径 
+		System.out.println("用户的当前工作目录:"+pathUser);//  用户的当前工作目录
+		
 		try {
 			//路径：******根目录下，与("./FileInputStreamTest.txt")结果一样
 			FileInputStream fis = new FileInputStream("FileInputStreamTest.txt");// 调用了File()方法
