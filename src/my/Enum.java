@@ -51,6 +51,8 @@ public class Enum {
         Light[] allLight = Light.values();//获得该枚举类所有的枚举对象
 
         for (Light aLight : allLight) {		//遍历对象
+            System.out.println("*******************************************");
+
         	/****模糊理解：枚举类内，每个枚举都是一个对象，一个枚举类，相当于一个包含很多对象的arraylist***/
             System.out.println("返回枚举的名字：" + aLight.name());//得到枚举的名字
             System.out.println("返回枚举的位置序列号：" + aLight.ordinal());//得到枚举的位置序列号
@@ -61,11 +63,12 @@ public class Enum {
             System.out.println("自定义的toString：" + aLight.toString());//可以覆盖toString方法
             System.out.println("类中其他枚举对象：" + aLight.GREEN);//具体某一个aLight
             System.out.println("类中其他枚举对象的变量：" + aLight.GREEN.ss);
+            System.out.println("*******************************************");
         }
         ArrayList< Light> EnumArray = new ArrayList<Light>();
         for (Light aLight : allLight) {		//遍历对象
         	EnumArray.add(aLight);
-        	System.out.println("###枚举对象："+aLight);
+        	System.out.println("###枚举对象："+aLight);//调用了toString 方法
         }
     }
 
