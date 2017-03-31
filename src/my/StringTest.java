@@ -19,8 +19,56 @@ public class StringTest {
 		System.out.println(StringValueEqual("aa", "aa"));
 		
 		System.out.println("两个字符串或运算"+StrCompare("010", "001"));
+		String[] arr =new  String[]{"a","b","c"};
+		int[] arr2 =new  int[]{1,5,6};
+		System.out.println("========================================");
+		System.out.println(getIndexInArray("g", arr));
+		System.out.println(getIndexInArray(7, arr2));
 		
+		System.out.println(getValueByArrayIndex(arr, 1));
+		System.out.println(getValueByArrayIndex(arr2, 2));
 		
+	}
+	
+	public static<T> int getIndexInArray(T value,T array){
+		int res = -1;
+		if(array instanceof String[]){
+			String[] arr = (String[])array;
+			String str = (String)value;
+			for(int i=0;i<arr.length;i++){
+				if(str == arr[i]){
+					res = i;
+					break;
+				}
+			}
+			
+		}else if(array instanceof int[]){
+			int[] arr = (int[])array;
+			int str = (int)value;
+			for(int i=0;i<arr.length;i++){
+				if(str == arr[i]){
+					res = i;
+					break;
+				}
+			}
+		}
+		return res;		
+	}
+	
+	public static<T> Object getValueByArrayIndex(T array,int index){
+		Object res =null;
+		if(array instanceof String[]){
+			String[] arr = (String[])array;
+			if(index<arr.length){
+				res = arr[index];
+			}
+		}else if(array instanceof int[]){
+			int[] arr = (int[])array;
+			if(index<arr.length){
+				res = arr[index];
+			}
+		}
+		return res;
 	}
 
 	/**

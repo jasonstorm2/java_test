@@ -37,6 +37,11 @@ public class DownUtil {
 	
 	private int fileSize;
 	
+	/** 
+	 * @param path  url资源路径
+	 * @param targetFile 下载存放路径
+	 * @param threadNum  下载线程总数
+	 */
 	public DownUtil(String path,String targetFile,int threadNum){
 		this.path = path;
 		this.targetFile = targetFile;
