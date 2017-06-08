@@ -22,6 +22,7 @@ public class FileReaderTest {
 	 * 
 	 */
 	public static void main(String[] args) {
+		//文件默认的编码格式是 gbk
 		try(FileReader fis = new FileReader("FileInputStreamTest.txt");
 				/*
 				 * 问题出在FileReader读取文件的过程中，FileReader继承了InputStreamReader，
@@ -31,7 +32,7 @@ public class FileReaderTest {
 				 * Windows下简体中文默认使用GBK字符集，而Linux下则默认使用UTF-8字符集。。。。。。
 				 */
 		    //此方法可以解决 乱码问题
-		    InputStreamReader isr = new InputStreamReader(new FileInputStream("FileInputStreamTest.txt"),"UTF-8");
+		    InputStreamReader isr = new InputStreamReader(new FileInputStream("FileInputStreamTest.txt"),"GBK");
 				
 				
 			FileInputStream fisss = new FileInputStream("FileInputStreamTest.txt")){
@@ -44,10 +45,12 @@ public class FileReaderTest {
 //				System.out.println("是否支持mark："+fis.markSupported());
 //				fis.skip(2);
 				String print = new String(bbuf,0,hasRead);
-				System.out.println(new String(print.getBytes(),"UTF-8"));
+				System.out.println(new String(print.getBytes(),"GBK"));
+				System.out.println(new String(print.getBytes(),"UTF-8"));//编码不一致，中文出错
+
 				System.out.println("@@@@@-------------------------------------------------------------------");
 
-				System.out.println(print);
+				System.out.println(print); //本文件的编码 也是GBK
 				System.out.println("#####-------------------------------------------------------------------");
 
 			}

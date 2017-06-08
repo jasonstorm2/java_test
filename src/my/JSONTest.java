@@ -135,6 +135,8 @@ public class JSONTest {
 		
 		isInstanceOf(jar3.get(2));
 		
+		JSONRemoveTest(s3);
+		
 	}
 	
 	public static String isInstanceOf(Object obj){
@@ -200,6 +202,14 @@ public class JSONTest {
 			data.add(jj);
 		}
 		return data;		
+	}
+	
+	public static void JSONRemoveTest(String str){
+		JSONObject jb = JSON.parseObject(str);
+		System.out.println("É¾³ýÇ°£º"+jb);		
+		jb.remove("what");
+		System.out.println("É¾³ýºó£º"+jb);
+		
 	}
 
 }

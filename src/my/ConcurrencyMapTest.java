@@ -2,6 +2,14 @@ package my;
 
 import java.util.concurrent.ConcurrentHashMap;
 
+
+/**
+ * 关于多线程维护一个ConcurrentHashMap的操作
+ * http://www.cnblogs.com/zhuawang/p/4779649.html
+ * 
+ * @author Administrator
+ *
+ */
 public class ConcurrencyMapTest {
 	public static ConcurrentHashMap<Integer, String> con = new ConcurrentHashMap<Integer, String>();
 	

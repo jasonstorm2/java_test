@@ -8,6 +8,12 @@ import java.net.URLConnection;
 import java.util.List;
 import java.util.Map;
 
+
+/**
+ * 不管是发送GET请求，还是发送POST请求，获取URLConnection相应的方式一样
+ * 如果可以确定远程响应是字符流，则可以使用字符流读取
+ * 如果不能确定，则使用字节流读取即可。。。
+ */
 public class GetPostTest {
 	
 	public static String sendGet(String url,String param){
@@ -72,7 +78,7 @@ public class GetPostTest {
 				out.flush();
 			}
 			
-			try(
+			try(//定义BufferedReader 输入流来读取URL的响应
 					BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream(),"utf-8"))
 					){
 				String line;

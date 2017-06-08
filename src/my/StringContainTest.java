@@ -16,6 +16,9 @@ public class StringContainTest {
 		System.out.println("是否包含某字段："+inContain);
 		System.out.println("是否包含某字段："+str.contains("35龙"));
 		
+		int percent = (int)(((3*1.0)/6)*100);
+		System.out.println("百分比："+percent);
+		
 	}
 	
 	public static boolean isStrContain(String a,String b){
