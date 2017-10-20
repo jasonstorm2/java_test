@@ -17,16 +17,19 @@ public class SocketServer {
 	
 	
 	public static void main(String[] args) throws IOException {
+//		ServerSocket ss = new ServerSocket(1022);
+//		while(true){
+//			// 接收到socket消息，产生一个socket
+//			// 此行代码会阻塞，将一直等待别人的连接
+//			Socket s = ss.accept();
+//			socketList.add(s);
+//			// 每当客户端连接后，启动一个线程，为该客户端服务
+//			new Thread(new ServerThread(s)).start();
+//
+//		}
 		ServerSocket ss = new ServerSocket(1022);
-		while(true){
-			// 接收到socket消息，产生一个socket
-			// 此行代码会阻塞，将一直等待别人的连接
-			Socket s = ss.accept();
-			socketList.add(s);
-			// 每当客户端连接后，启动一个线程，为该客户端服务
-			new Thread(new ServerThread(s)).start();
-
-		}
+		Socket s = ss.accept();
+		socketList.add(s);
 	}
 }
 

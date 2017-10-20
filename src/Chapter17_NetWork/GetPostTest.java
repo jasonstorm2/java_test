@@ -18,7 +18,7 @@ public class GetPostTest {
 	
 	public static String sendGet(String url,String param){
 		String res = "";
-		String urlName = url + "?" + param;
+		String urlName = url;
 		
 		try {
 			URL realUrl = new URL(urlName);
@@ -101,12 +101,12 @@ public class GetPostTest {
 	}
 	
 	public static void main(String[] args) {
-		String s = GetPostTest.sendGet("https://www.baidu.com/", null);
+		String s = GetPostTest.sendGet("http://10.163.46.202:8080/taiyi/survey.txt", null);
 		System.out.println("´òÓ¡½á¹û£º");		
 		System.out.println(s);
 		System.out.println("***************************************post test*********************************");
 
-		String s1 = GetPostTest.senPost("https://www.baidu.com/", null);
+		String s1 = GetPostTest.senPost("http://10.163.46.202:8080/taiyi/survey.txt", null);
 		System.out.println(s1);
 		
 	}

@@ -22,15 +22,17 @@ public class ListMapNullPutAndDeleteTest {
 		m.put(1, null);
 		m.put(2, "sdfs");
 		System.out.println("map的大小："+m.size());
-		m.put(3, ss);
+		m.put(3, "jiba");
+		m.put(4, "ss");
+		
 		System.out.println("map的大小："+m.size());
 		
 		/**
 		 * Map遍历删除测试
 		 */
 //		ListMapNullPutAndDeleteTest.delete1(m);
-//		ListMapNullPutAndDeleteTest.delete2(m);
-		ListMapNullPutAndDeleteTest.delete3(m);
+		ListMapNullPutAndDeleteTest.delete2(m);
+//		ListMapNullPutAndDeleteTest.delete3(m);
 		
 	}
 	
@@ -43,13 +45,19 @@ public class ListMapNullPutAndDeleteTest {
 		System.out.println("map的值："+m.toString());
 	}
 	
+	/**
+	 * remove方法删除最后一个不会有问题，删除其他位置会报错
+	 * 所以遍历删除用iterator
+	 * @param m
+	 */
 	private static void delete2(Map<Integer, String> m) {
 		  Iterator<Map.Entry<Integer, String>> it = m.entrySet().iterator();  
 	        while(it.hasNext()){  
 	            Map.Entry<Integer, String> entry = it.next();  
-	            if(entry.getKey() == 3)  
-//	            	m.remove(entry.getKey()); // false
-	                it.remove();//使用迭代器的remove()方法删除元素  
+	            int key = entry.getKey();
+	            if(key == 4)  
+	            	m.remove(key); // false
+//	                it.remove();//使用迭代器的remove()方法删除元素  
 	        }
 	        
 	        System.out.println("map的值："+m.toString());
@@ -60,11 +68,11 @@ public class ListMapNullPutAndDeleteTest {
         while(it.hasNext()){  
             Map.Entry<Integer, String> entry=it.next();  
             int key=entry.getKey();  
-            if(key==1){  
+            if(key==2){  
                 System.out.println("delete this: "+key+" = "+key);  
-                m.put(1, "奇数");   //ConcurrentModificationException  ok??????为什么，可以放入，但不可以删除
+//                m.put(1, "奇数");   //ConcurrentModificationException  ok??????为什么，可以放入，但不可以删除
 //                m.remove(key);      //ConcurrentModificationException
-//                it.remove();        //OK   使用Iterator的remove方法移除当前对象  map的remove 方法会报错
+                it.remove();        //OK   使用Iterator的remove方法移除当前对象  map的remove 方法会报错
             }  
         }
 	        
