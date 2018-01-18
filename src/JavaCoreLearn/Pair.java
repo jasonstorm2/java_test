@@ -1,5 +1,13 @@
 package JavaCoreLearn;
 
+
+/**
+ * Ò»¸ö·ºÐÍbean
+ * @author Administrator
+ *
+ * @param <T>
+ * @param <U>
+ */
 public class Pair<T,U> {
 	private T first;
 	private T second;
@@ -32,7 +40,5 @@ public class Pair<T,U> {
 	
 	public void setUFirst(U f){
 		this.ufirst = f;
-	}
-	
-	
+	}	
 }

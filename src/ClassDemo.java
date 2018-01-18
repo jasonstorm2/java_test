@@ -5,7 +5,7 @@ import myl.moon;
 
 
 
-class A
+class AFather
 {
 	static{
 		System.out.println("A里面的静态代码块");
@@ -17,7 +17,7 @@ class A
     }    
     
 }
-class B extends A
+class B extends AFather
 {
     void aa()
     {
@@ -26,7 +26,7 @@ class B extends A
     }    
     
 }
-class C extends A
+class C extends AFather
 {
     void aa()
     {
@@ -45,19 +45,22 @@ public class ClassDemo
     
     public static void main(String[] args)
     {        
+    	ClassDemo t1=new ClassDemo();
+        t1.show("C");//程序类名
+        System.out.println("-----------动态加载--------------");
         C showc = new C();
         showc.aa();  //子类继承了父类，先实现父类
         System.out.println("-------------------------");
         
         ClassDemo t=new ClassDemo();
         t.show("C");//程序类名
-        t.show("A");
+        t.show("AFather");
         t.show("B");
         
         System.out.println("-------------------------");
-        A show2 = new A();
+        AFather show2 = new AFather();
         show2.aa();
-        A sh = new A();
+        AFather sh = new AFather();
         sh.aa();
         
         moon ww = new moon();
@@ -70,7 +73,7 @@ public class ClassDemo
         {
         	//Class.forName(xxx.xx.xx) 返回的是一个类, .newInstance() 后才创建一个对象 
         	//Class.forName(xxx.xx.xx)的作用是要求JVM查找并加载指定的类，也就是说JVM会执行该类的静态代码段
-             A show=(A)Class.forName(name).newInstance();
+             AFather show=(AFather)Class.forName(name).newInstance();
            
         show.aa();
     }

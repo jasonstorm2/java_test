@@ -20,6 +20,7 @@ public class StopWatchTest {
 	 * @throws InterruptedException
 	 */
 	private static void test01() throws InterruptedException {
+		System.out.println("方法的名字test01");
 	    StopWatch watch = new StopWatch();  
 	    watch.start();
 	    Thread.sleep(1000);  
@@ -49,6 +50,7 @@ public class StopWatchTest {
 	 * @throws InterruptedException
 	 */
 	private static void test02() throws InterruptedException {
+		System.out.println("方法的名字test02");
 	    StopWatch watch = new StopWatch();  
 	    watch.start();  
 	    Thread.sleep(1000);  
@@ -65,7 +67,8 @@ public class StopWatchTest {
 	 * 测试 暂停计时器方法suspend() 和 resume()方法
 	 * @throws InterruptedException
 	 */
-	private static void test03() throws InterruptedException{  
+	private static void test03() throws InterruptedException{
+		System.out.println("方法的名字test03");
 	    StopWatch watch = new StopWatch();  
 	    watch.start();  
 	    Thread.sleep(1000);  

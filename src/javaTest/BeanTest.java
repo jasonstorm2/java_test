@@ -9,6 +9,8 @@ import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
+import org.apache.poi.hdgf.streams.Stream;
+
 import my.JavaBean;
 
 
@@ -47,6 +49,8 @@ public class BeanTest {
 		ab.setCock("几把");
 		ab.setFrequence(new int[]{1,3,4});
 		ab.setHowbig(20);
+		ab.setNotget("没有get方法");
+		ab.notset = "没有set方法";
 		ab.field = "没有setget的域";
 		/**
 		 * Introspector.getBeanInfo()内省，得到bean类的相关信息
@@ -71,7 +75,7 @@ public class BeanTest {
 			if(paramtypes.length>0){
 				System.out.println("方法有参数");
 				for(Class<?> p : paramtypes){
-					System.out.println("方法参数所表示的类型的类的名字："+p.getName());
+					System.out.println("方法参数所表示的类型的类的名字："+p.getSimpleName());
 				}
 			}else{
 				System.out.println("方法无参数");
@@ -79,7 +83,7 @@ public class BeanTest {
 			System.out.println("………………………………………………");
 		}
 		
-		
+		System.out.println("******************遍历PropertyDescriptor******************");
 
 		for(PropertyDescriptor p : pd){
 			System.out.println("元素的名字："+p.getName());				//元素的名字：howbig
@@ -94,7 +98,8 @@ public class BeanTest {
 					System.out.println();
 				}
 			}else{
-				System.out.println("元素的值    ："+p.getReadMethod().invoke(ab));
+				//notget变量没有get方法，此处会报错
+				System.out.println("元素的值--    ："+p.getReadMethod().invoke(ab));
 			}			
 			System.out.println("&&&&&&&&&&&&&&");
 		}
@@ -107,14 +112,21 @@ public class BeanTest {
 				p.getWriteMethod().invoke(ab,new int[]{11,22,33});
 			}else if(p.getName().equals("howbig")){
 				p.getWriteMethod().invoke(ab,50);
+			}else if(p.getName().equals("notset")){
+				p.getWriteMethod().invoke(ab,"ll"); //变量没有set方法，此处会报错
 			}
 			
-			System.out.println("改变后的值："+p.getReadMethod().invoke(ab));
+			System.out.println(p.getName()+" 改变后的值："+p.getReadMethod().invoke(ab));
 		}
 		//反射的一点小应用
 		System.out.println("有setget的域的数量："+pd.length);
 		Field[] fields = ab.getClass().getFields();
 		System.out.println("bean中域的数量："+fields.length);			  //获得本类和父类中所有的field的数量
+		System.out.println("*****各个域的名字****");
+		for(Field f : fields){
+			System.out.println(f.getName());
+		}
+		System.out.println("*****各个域的名字****");
 		ab.isAlive = true;
 		System.out.println("``````````````````");
 		for(Field f : fields){			
@@ -132,12 +144,23 @@ public class BeanTest {
 }
 
 class ABean extends JavaBean{
+	/***有setget的域***/
 	public int howbig;
 	public String cock;
 	public int[] frequence;
-	
+	/***没有setget的域***/
 	public String field;
 	public boolean isAlive;
+	
+	public String notset;
+	public String notget;
+	
+	public String getNotset(){
+		return notset;
+	}
+	public void setNotget(String str) {
+		this.notget = str;
+	}
 	
 	
 	public int getHowbig() {
@@ -158,5 +181,9 @@ class ABean extends JavaBean{
 	public void setFrequence(int[] frequence) {
 		this.frequence = frequence;
 	}	
+	
+	public void non(){
+		
+	}
 
 }

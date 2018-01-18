@@ -8,13 +8,18 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+/**
+ * 本例测试 通过注释类，绑定按钮和监听器
+ * @author Administrator
+ *
+ */
 public class Anno2AnnotationTest {
 	private JFrame mainWin = new JFrame("使用注册绑定事件监听器");
 	
-	@Anno2Mine(listener = OkListener.class)//必须设置 annotation 为设置默认值的变量
+	@Anno2Mine(listener = OkListener.class,test = "确定")//必须设置 annotation 为设置默认值的变量
 	private JButton ok = new JButton("确定");
 	
-	@Anno2Mine(listener = CancelListener.class)
+	@Anno2Mine(listener = CancelListener.class,test = "取消")
 	private JButton cancel = new JButton("取消");
 	
 	public void init(){

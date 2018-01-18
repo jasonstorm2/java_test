@@ -30,9 +30,8 @@ public class JavaBean {
 		this.wtf = wtf;
 	}
 	
-	public void setOneTwo(String one,int two){
+	public void setOne(String one){
 		this.one = one;
-		this.two = two;
 	}
 
 }

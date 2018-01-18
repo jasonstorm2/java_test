@@ -6,6 +6,15 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+
+/**
+ * 自定义注释类，
+ * 该类有两个变量，都设置有默认值，成员变量以方法的形式来定义
+ * 		在使用该注释时可以重设这两个变量，格式：@AnnotationTest(name="ji",age = 222)
+ * 
+ * @author Administrator
+ *
+ */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Inherited()

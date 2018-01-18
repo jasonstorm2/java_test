@@ -19,5 +19,7 @@
 	<classpathentry kind="lib" path="libs/mysql-connector-java-5.1.30-bin.jar"/>
 	<classpathentry kind="lib" path="E:/my/lala.jar"/>
 	<classpathentry kind="lib" path="libs/zmq-3.1.0.jar"/>
+	<classpathentry kind="lib" path="libs/quartz-2.2.2.jar" sourcepath="D:/java_test/quartz-2.2.3-distribution"/>
+	<classpathentry kind="lib" path="libs/quartz-jobs-2.2.2.jar" sourcepath="D:/java_test/quartz-2.2.3-distribution"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

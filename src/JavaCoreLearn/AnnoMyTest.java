@@ -1,10 +1,15 @@
 package JavaCoreLearn;
 
+/**
+ * 一个类，在方法上加上自定义的注释
+ * @author Administrator
+ *
+ */
 public class AnnoMyTest {
 	
 	@AnnoTestable	
 	public static void m1(){
-		
+		System.out.println("m1方法被调用");		
 	}
 	
 	public static void m2(){
@@ -20,7 +25,7 @@ public class AnnoMyTest {
 	}
 	@AnnoTestable	
 	public static void m5(){
-		
+		System.out.println("m5方法被调用");		
 	}
 	public static void m6(){
 		

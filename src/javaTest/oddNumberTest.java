@@ -4,6 +4,7 @@ public class oddNumberTest {
 	public static void main(String[] args) {
 		System.out.println(oddNumberTest.oddOrNot(6));
 		System.out.println(oddNumberTest.oddOrNot2(1));
+		lll();
 	}
 	
 	/**
@@ -24,6 +25,12 @@ public class oddNumberTest {
 	 */
 	public static boolean oddOrNot2(int num){
 		return (num & 2) != 0;
+	}
+	
+	public static void lll(){
+//		 int mid = (1 >>> 1) & ~1; // force midpoint to be even
+		int mid = 1>>>1;
+		System.out.println("1 >>> 1╡Бйтё╨нч╥Ш╨есррфё╛©ун╩рт0╡╧фК"+mid);
 	}
 
 }

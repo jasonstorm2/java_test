@@ -9,7 +9,7 @@ import java.net.URL;
  * 
  * UNC(Universal Naming Convention) / 通用命名规则，也叫通用命名规范、通用命名约定。
 
-   网络（主要指局域网）上资源的完整 Windows 2000 名称。它符合 \\servername\sharename 格式，
+ 	网络（主要指局域网）上资源的完整 Windows 2000 名称。它符合 \\servername\sharename 格式，
    其中 servername 是服务器名，sharename 是共享资源的名称。
    目录或文件的 UNC 名称可以包括共享名称下的目录路径，格式为：
 
@@ -82,18 +82,43 @@ public class FileAndUrlAddressTest {
 		System.out.println("File文件路径："+file.getAbsolutePath());//File文件路径：D:\我的批处理\2.bat
 		URL url0 = file.toURL();//废弃，建议用下面的方式
 		URL url = file.toURI().toURL();
-		System.out.println("URL文件路径: "+url.getPath());	//URL文件路径: /D:/我的批处理/2.bat---多了一个斜杠？
+		System.out.println("url.getPath(): "+url.getPath());	//URL文件路径: /D:/我的批处理/2.bat---多了一个斜杠？
+		System.out.println("url.getContent():"+url.getContent());  //sun.net.www.protocol.http.HttpURLConnection$HttpInputStream@1d44bcfa
+		System.out.println("url.getDefaultPort():"+url.getDefaultPort());
+		System.out.println("url.getHost():"+url.getHost());
+		System.out.println("url.getPort():"+url.getPort());
+		System.out.println("url.getProtocol():"+url.getProtocol());
+		System.out.println("url.getQuery():"+url.getQuery());
+		System.out.println("url.getRef():"+url.getRef());
+		System.out.println("url.getUserInfo():"+url.getUserInfo());
+		System.out.println("url.getClass():"+url.getClass());
+//		System.out.println("url.getPath():"+url.getContent(classes));
+		
+		
 		FileAndUrlAddressTest ft = new FileAndUrlAddressTest();
 		URL url2 = ft.getURL();
 		System.out.println("URL2文件路径: "+url2.getPath());	
 		
 		URL w3 = new URL("http://www.baidu.com");		
-		System.out.println(w3.getContent());
+		System.out.println("w3.getContent():"+w3.getContent());  //sun.net.www.protocol.http.HttpURLConnection$HttpInputStream@1d44bcfa
+		System.out.println("w3.getPath():"+w3.getPath());
+		System.out.println("w3.getDefaultPort():"+w3.getDefaultPort());
+		System.out.println("w3.getHost():"+w3.getHost());
+		System.out.println("w3.getPort():"+w3.getPort());
+		System.out.println("w3.getProtocol():"+w3.getProtocol());
+		System.out.println("w3.getQuery():"+w3.getQuery());
+		System.out.println("w3.getRef():"+w3.getRef());
+		System.out.println("w3.getUserInfo():"+w3.getUserInfo());
+		System.out.println("w3.getClass():"+w3.getClass());
+//		System.out.println("w3.getPath():"+w3.getContent(classes));
+		
+		
 	}
 	
 	/**
 	 * 获得该类的 class文件的路径，当前类FileAndUrlAddressTest.class文件的URI目录
 	 * /D:/WorkSpace1/Java_Test/bin/my/
+	 * /D:/java_test/bin/my/
 	 * @return
 	 * 
 	 */
@@ -105,6 +130,7 @@ public class FileAndUrlAddressTest {
 	/**
 	 * 获得该类的 class文件的上一级路径，当前的classpath的绝对URI路径
 	 * /D:/WorkSpace1/Java_Test/bin/
+	 * /D:/java_test/bin/
 	 * @return
 	 */
 	public URL getURL2(){
@@ -115,6 +141,7 @@ public class FileAndUrlAddressTest {
 	/**
 	 * 获得该类的 class文件的上一级路径，当前的classpath的绝对URI路径
 	 * /D:/WorkSpace1/Java_Test/bin/
+	 * /D:/java_test/bin/
 	 * 
 	 * 推荐用这个方法来获取classpath的绝对路径的URI
 	 * @return

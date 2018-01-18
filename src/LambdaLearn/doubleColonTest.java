@@ -48,16 +48,33 @@ public class doubleColonTest {
 		return null;
 	}
 	
+	public static Functional3<?, ?> testMethodReference2(){
+		System.out.println("测试::方法引用");
+		return (a,b)->12;
+	}
+	
 	public static String 中文(){
 		System.out.println("测试::方法引用");
 		return null;
 	}
 	
+	public void testInvodeMethod(Functional3<String,Integer> f3){
+		String a = "stringvalue";
+		int b = 1;
+		f3.sex(a, b);		
+	}
+	public int testMethod(String s,Integer i){
+		return 1;		
+	}
+	
 	public static void main(String[] args) {
 		
 		/**有空再来修改2017.1**/
-//		Functional3 s = doubleColonTest::testMethodReference;
-		doubleColonTest d = new doubleColonTest();		
+		doubleColonTest thisClass = new doubleColonTest();		
+//		Functional3 s = thisClass ::testMethodReference();
+		thisClass.testInvodeMethod((a,b)->a);
+//		thisClass.testInvodeMethod(doubleColonTest::testMethod);
+
 		/*
 		 * 需要注意的是，函数式接口的名称并不是 lambda 表达式的一部分。
 		 * 那么问题来了，对于给定的 lambda表达式，它的类型是什么？
@@ -66,7 +83,7 @@ public class doubleColonTest {
 		 * 编译器负责推导 lambda 表达式类型。它利用 lambda 表达式所在上下文所期待的类型 进行推导，这个被期待的类型 被称为 目标类型。
 		 * lambda 表达式--只能出现--在目标类型为函数式接口的上下文中。
 		 */
-		Functional2<String> f1 = ()-> "fuc";//实现一个Functional2类，返回的是"fuc"
+		Functional<String> f1 = (a)-> "fuc";//实现一个Functional类，返回的是"fuc"
 		Functional2<String> f11 = ()-> "fuc";//实现一个Functional2类，返回的是"fuc"
 		
 		/*
@@ -79,7 +96,7 @@ public class doubleColonTest {
 		 */
 		Functional<String> f3 = a->a ;//
 		/*
-		 * 当 lambda 的参数有两个而且它的类型可以被推导得知时，该参数列表外面的括号 不可以 被省略：
+		 * 当 lambda 的参数有两个而且它的类型可以被推导得知时，该参数列表外面的括号 !不可以! 被省略：
 		 */
 		Functional3<String,Boolean> ft = (a,b)->a ;
 		Functional<String> f4 = a -> {
@@ -97,12 +114,7 @@ public class doubleColonTest {
 //			sum = sum + 1;       //错误，  对值封闭，不能改变外部类的值
 			list.add("moment");  //正确，对变量开放
 			return a;			
-		};
-		
-		
-		
-
-		
+		};		
 	}
 	
 	public void print(){
@@ -110,7 +122,7 @@ public class doubleColonTest {
 	}
 	
 //	public Object usePrint(doubleColonTest d){
-//		return doubleColonTest::print;
+//		return doubleColonTest::print; //错误方法
 //	}
 	
 	public void forBlock(){//局部变量，全局变量，显示参数，隐式参数，匿名类，匿名内部类,类型擦除跟重载，编译类型，运行时类型？？？？？？？？？？？
@@ -126,7 +138,7 @@ public class doubleColonTest {
 @FunctionalInterface  //接口有此标志，说明其内部只能有一个方法,变量倒是无所谓,静态方法（类方法）,默认方法，以及冗余方法不属于函数式接口的范畴
 interface Functional<T>{
 	String ss = "2";
-	T judge(T t);
+	T judge(T t);  // 默认是抽象的方法
 	static boolean  dd() {  //静态方法，在接口内可以有方法体哦。
 		return false;
 	}
@@ -138,19 +150,15 @@ interface Functional<T>{
 @FunctionalInterface  //接口有此标志，说明其内部只能有一个方法,变量倒是无所谓,静态方法（类方法）,默认方法，以及冗余方法不属于函数式接口的范畴
 interface Functional2<T>{
 	String ss = "2";
-//	T judge();  此方法，跟 sex()方法不能同时存在！！
+//	T judge();  //此方法，跟 sex()方法不能同时存在！！
 	static boolean  dd() {
 		return false;
-	}
-	
-	abstract T sex();
-	
+	}	
+	abstract T sex();	
 }
 
 @FunctionalInterface  
-interface Functional3<T,K>{	
+interface Functional3<T,K>{
 	abstract T sex(T t,K k);	
-	
-	
 }
 

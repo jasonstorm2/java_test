@@ -6,6 +6,16 @@ import java.lang.reflect.Field;
 
 import javax.swing.AbstractButton;
 
+/**
+ * 本类的作用是：绑定 成员变量对象 和 成员变量的注释类的参数对象
+ * 
+ * 通过反射，获取成员变量的注释类对象里面的参数，本例的参数是ActionListener类Class对象
+ * 通过反射，获取成员变量的对象，（强制转化(AbstractButton)fObj）
+ * 
+ * 
+ * @author Administrator
+ *
+ */
 public class Anno2ActionListenerInstaller {
 	int a = 2;
 	int b = 3;
@@ -21,10 +31,10 @@ public class Anno2ActionListenerInstaller {
 				Object fObj = f.get(obj);//获得 成员变量对象（以便判断对象类型）
 				
 				if(a !=null && fObj !=null && fObj instanceof AbstractButton){
-					Class<? extends ActionListener> listenerClazz = a.listener();//获取元数据 Class对象
-					
+					Class<? extends ActionListener> listenerClazz = a.listener();//获取元数据 Class对象					
 					ActionListener al = listenerClazz.newInstance();//实例化
 					AbstractButton ab = (AbstractButton)fObj;
+					
 					ab.addActionListener(al);			//给按钮设置监听					
 				}
 			}
