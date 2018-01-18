@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!--是吗
+<project name="helloWorld" basedir="E:\GAME">
+       <target name="sayHelloWorld">
+              <echo message="The base dir is: ${basedir}"/>
+       </target>
+</project>
+是吗 
+
+<project name="javaTest" default ="print" basedir="." >
+    <target name="clean">
+       <delete dir="build"/>
+    </target>
+	
+    <target name="copy" >
+    	<copy file="file2.txt" tofile="copy222.txt"/>
+    </target>
+	
+    <target name="print" >
+    	<echo message="Hello,Amigo"/>
+    </target>
+
+    <target name="compile" depends="clean">
+       <mkdir dir="build/classes"/>
+      <javac srcdir="src" destdir="build/classes"/>
+    </target>
+
+    <target name="run" depends="compile">
+       <java classname="HelloWorld">
+           <classpath>
+              <pathelement path="build/classes"/>
+           </classpath>
+       </java>
+    </target>
+	
+	<target name="jar" depends="run">
+	<jar destfile="helloworld.jar" basedir="build/classes">
+	           <manifest>
+	              <attribute name="Main-class" value="HelloWorld"/>
+	           </manifest>
+	       </jar>
+	</target>
+</project>
+-->
+
+<!--生成jar包-->
+
+<project name="helloWorld" default="makejar" basedir="D:\java_test">
+	<target name="makejar" depends = "targetA">
+		<description>
+					a depend and a jar example!
+		</description>
+		<!--destfile 生成文件，basedir 需要生成的class-->
+		<jar destfile="java_test.jar" basedir="bin">
+			<manifest>
+				<attribute name="Main-class" value="LambdaLearn.lambdaTest" />
+			</manifest>
+
+		</jar>
+		
+	</target>
+	<!--生成目录-->
+	<target name="makedir">
+		<mkdir dir="build/classes"/>
+	</target>
+	
+	<target name="targetA" if="ant.java.version">
+	              <echo message="Java Version: ${ant.java.version}"/>
+	</target>
+
+</project>
+

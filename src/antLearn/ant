@@ -1,0 +1,88 @@
+	ant跨平台的构件工具学习
+	
+	Ant是一个Apache基金会下的跨平台的构件工具，它可以实现项目的自动构建和部署等功能
+	
+	Ant是一种基于Java的打包工具，Ant脚本采用XML格式编写，默认的文件名为build.xml。
+	
+	接下来开始向读者讲解本节的重点：Ant的关键元素project、target、property和task。
+	
+	<?xml version="1.0"?>
+	<project name="helloWorld">    //project元素是Ant构件文件的根元素,ant构件文件至少应该包含一个project元素，否则会发生错误
+	       <target name="sayHelloWorld">   //每个project元素下，可包含多个target元素
+	              <echo message="Hello,Amigo"/>
+	       </target>
+	</project>
+	
+	project元素:各个属性
+	1）name属性
+	
+	用于指定project元素的名称。
+	
+	2）default属性
+	
+	用于指定project默认执行时所执行的target的名称。--target可以有多个
+	
+	3）basedir属性
+	
+	用于指定基路径的位置。即要操作的文件的位置。该属性没有指定时，使用Ant的构件文件的附目录作为基准目录。即为Ant构件文件的父目录
+	
+	
+	target元素：
+	
+	它为Ant的基本执行单元，它可以包含一个或多个具体的任务。多个target可以存在相互依赖关系。它有如下属性：
+	
+	1）name属性
+	
+	指定target元素的名称，这个属性在一个project元素中是唯一的。我们可以通过指定target元素的名称来指定某个target。
+	
+	2）depends属性
+	
+	用于描述target之间的依赖关系，若与多个target存在依赖关系时，需要以“,”间隔。Ant会依照depends属性中target出现的顺序依次执行每个target。被依赖的target会先执行
+	
+	
+	property元素:
+	
+	该元素可看作参量或者参数的定义，project的属性可以通过property元素来设定，也可在Ant之外设定。若要在外部引入某文件，例如build.properties文件，可以通过如下内容将其引入：<property file=” build.properties”/>
+	
+	property元素可用作task的属性值。在task中是通过将属性名放在“${”和“}”之间，并放在task属性值的位置来实现的。
+	
+	Ant提供了一些内置的属性，它能得到的系统属性的列表与Java文档中System.getPropertis()方法得到的属性一致，这些系统属性可参考sun网站的说明。
+	
+	同时，Ant还提供了一些它自己的内置属性，如下：
+	
+	basedir：project基目录的绝对路径，该属性在讲解project元素时有详细说明，不再赘述；
+	
+	ant.file：buildfile的绝对路径，如上面的各例子中，ant.file的值为E:"build.xml；
+	
+	ant.version：Ant的版本，在本文中，值为1.7.0；
+	
+	ant.project.name：当前指定的project的名字，即前文说到的project的name属性的值；
+	
+	ant.java.version：Ant检测到的JDK的版本，在上例运行结果中可看到为1.5。
+	
+	下面让读者来看一个property元素使用的简单例子。修改E:"build.xml文件，内容如下：
+	
+	<?xml version="1.0"?>
+	<project name="propertyStudy" default="example">
+	<property name="name" value="amigo"/>
+	<property name="age" value="25"/>
+	<target name="example">
+	        <echo message="name: ${name}, age: ${age}"/>
+	</target>
+	</project>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
