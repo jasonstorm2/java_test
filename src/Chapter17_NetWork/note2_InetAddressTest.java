@@ -18,7 +18,7 @@ import java.net.UnknownHostException;
  * @author Administrator
  *
  */
-public class InetAddressTest {
+public class note2_InetAddressTest {
 	public static void main(String[] args) throws Exception {
 		InetAddress ip = InetAddress.getByName("www.baidu1.com");
 //		InetAddress ip = InetAddress.getByAddress(new byte[]{115,(byte) 239,(byte) 210,27});
