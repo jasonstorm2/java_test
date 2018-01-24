@@ -19,7 +19,7 @@ import java.net.URLEncoder;
  * @author Administrator
  *
  */
-public class URLDecoderURLEncoderTest {
+public class note3_URLDecoderURLEncoderTest {
 	public static void main(String[] args) throws UnsupportedEncodingException {
 		//解码--把特殊的字符 转换为 普通字符
 		String decode = URLDecoder.decode("%E4%BD%A0%E5%A5%BD%E5%90%97", "utf-8");
