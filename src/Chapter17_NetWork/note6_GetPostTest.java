@@ -14,7 +14,7 @@ import java.util.Map;
  * 如果可以确定远程响应是字符流，则可以使用字符流读取
  * 如果不能确定，则使用字节流读取即可。。。
  */
-public class GetPostTest {
+public class note6_GetPostTest {
 	
 	public static String sendGet(String url,String param){
 		String res = "";
@@ -101,12 +101,12 @@ public class GetPostTest {
 	}
 	
 	public static void main(String[] args) {
-		String s = GetPostTest.sendGet("http://10.163.46.202:8080/taiyi/survey.txt", null);
+		String s = note6_GetPostTest.sendGet("http://10.163.46.202:8080/taiyi/survey.txt", null);
 		System.out.println("打印结果：");		
 		System.out.println(s);
 		System.out.println("***************************************post test*********************************");
 
-		String s1 = GetPostTest.senPost("http://10.163.46.202:8080/taiyi/survey.txt", null);
+		String s1 = note6_GetPostTest.senPost("http://10.163.46.202:8080/taiyi/survey.txt", null);
 		System.out.println(s1);
 		
 	}

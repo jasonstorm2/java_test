@@ -54,6 +54,7 @@ public class note2_InetAddressTest {
 		System.out.println("获取该InetAddress对象的全限定域名："+getLocal.getCanonicalHostName());//windows10.microdone.cn
 		System.out.println("主机地址："+getLocal.getHostAddress());//10.163.86.113
 		System.out.println("主机名称"+getLocal.getHostName());//LiZhenHua
+		InetAddress in =InetAddress.getByAddress(new byte[]{(byte)103,(byte)44,(byte)145,(byte)245});
 
 		
 	}

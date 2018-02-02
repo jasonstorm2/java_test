@@ -5,9 +5,9 @@ package Chapter17_NetWork;
  * @author Administrator
  *
  */
-public class MultiThreadDown {
+public class note5_MultiThreadDown {
 	public static void main(String[] args) throws Exception {
-		final DownUtil downUtil = new DownUtil("file:///D:/Test/source/xxx.rmvb", "D:\\Test\\destination\\xxx.rmvb", 4);
+		final note4_DownUtil downUtil = new note4_DownUtil("file:///D:/Test/source/xxx.rmvb", "D:\\Test\\destination\\xxx.rmvb", 4);
 		System.out.println("main当前线程："+Thread.currentThread().getName());
 		downUtil.download();
 		
