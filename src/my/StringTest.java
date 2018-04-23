@@ -13,6 +13,18 @@ public class StringTest {
 		System.out.println("打印出来："+str);		
 		System.out.println("星星数："+countStars("1"));
 		
+		String s = "100";
+		String s2 = new String("100");
+		String s3 = new String("100");
+		
+		System.out.println(StringValueEqual(s, s2));
+		System.out.println(StringValueEqual(s2, s3));
+		
+		System.out.println("1------------------------");
+		System.out.println(StringReferenceEqual(s, s2));
+		System.out.println(StringReferenceEqual(s2, s3));
+		System.out.println("2------------------------");
+		
 		System.out.println(StringValueEqual("100", "101"));
 		System.out.println(StringValueEqual("100", "100"));
 		System.out.println(StringValueEqual("a", "b"));
@@ -27,6 +39,8 @@ public class StringTest {
 		
 		System.out.println(getValueByArrayIndex(arr, 1));
 		System.out.println(getValueByArrayIndex(arr2, 2));
+		System.out.println("========================================");
+		isStringTheSameRef();
 		
 	}
 	
@@ -115,6 +129,16 @@ public class StringTest {
 	}
 	
 	/**
+	 * 判断两个String 的引用是否相同
+	 * @param str1
+	 * @param str2
+	 * @return
+	 */
+	private static boolean StringReferenceEqual(String str1,String str2){
+		return (str1 ==  str2);		
+	}
+	
+	/**
 	 * 两个 int 或运算
 	 * @param a
 	 * @param b
@@ -143,6 +167,19 @@ public class StringTest {
 			str+=isEqual(a1, b1);
 		}
 		return str;
+	}
+	
+	/**
+	 * 判断两个字符串的引用是否一样
+	 */
+	private static void isStringTheSameRef(){
+		String s1 = "program1";
+		String s2 = new String("program1");
+		String s3 = "pro"+"gram1";
+		System.out.println(s1==s2); //f
+		System.out.println(s1==s3); //t
+		System.out.println(s1 == s1.intern()); //t
+		
 	}
 
 }

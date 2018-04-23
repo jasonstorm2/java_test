@@ -12,8 +12,8 @@ import java.util.concurrent.TimeoutException;
 /**
  * Callable线程和Runnable线程的区别
  * 
- * Callable<V> 接口的call()方法有返回值,返回V类型，返回值是通过Future接口进行获得的。   run()无返回值
- * 				call()方法可以抛出异常，			run()方法不能抛出异常
+ * Callable<V> 接口的call()方法有返回值,返回V类型，返回值是通过Future接口进行获得的。   run()无返回值，但是可以在submit中添加固定的返回值
+ * 				call()方法可以抛出异常，也可以用trycatch捕获		run()方法不能抛出异常，但是可以用trycatch捕获
  * 
  * submit ,callable,和Future get()的关系：线程池如何利用callable取得返回值
  * Future<String> java.util.concurrent.AbstractExecutorService.submit(Callable<String> task)
@@ -23,7 +23,7 @@ import java.util.concurrent.TimeoutException;
  * submit方法也可以传入runnable接口
  * 
  * Future接口的各个方法
- * get()：得到返回值,有阻塞性
+ * get()：得到返回值,有阻塞性，即等线程执行完才返回结果
  * 
  * isDone()：判断线程是否完毕，结果是否返回，无阻塞
  * 
@@ -43,9 +43,9 @@ public class CallableFutureTest {
 				CallableFutureTest();	
 //		thisClass.CallableTest();
 //		thisClass.RunnableTest();
-//		thisClass.futureCancelTest();
+		thisClass.futureCancelTest();
 //		thisClass.futureGetByTimeTest();
-		thisClass.callableExceptionTest();
+//		thisClass.callableExceptionTest();
 	}	
 
 	
@@ -66,12 +66,20 @@ public class CallableFutureTest {
 		}
 
 		@Override
-		public String call() throws Exception {
-			// TODO Auto-generated method stub
-			Thread.sleep(2000);
+		public String call(){
 			String str = "返回线程名："+username;
-			System.out.println(System.currentTimeMillis()+"执行中。。。");
-			Integer.parseInt("a");
+//			try {
+//				Thread.sleep(2000);
+				
+				System.out.println(System.currentTimeMillis()+"执行中。。。");
+//				Integer.parseInt("a");
+				Integer.parseInt("a");
+				
+//			} catch (Exception e) {
+//				// TODO: handle exception
+//				System.out.println("在call中捕获异常");
+//				e.printStackTrace();
+//			}
 			return str;
 		}
 		
@@ -94,19 +102,23 @@ public class CallableFutureTest {
 		}
 
 		@Override
-		public void run(){
+		public void run() {
 			// TODO Auto-generated method stub
 			try {
-				
+				Thread.sleep(2000);
 				String str = "callable线程执行了，线程名："+username;				
 				while(true){
 					System.out.println("执行中。。。");
 					if(Thread.interrupted()){
 						throw new InterruptedException();
 					}
-				}				
+				}	
+				
+//				Integer.parseInt("a");
+//				
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
+				System.out.println("在run中抛出异常被捕获");
 				e.printStackTrace();
 			}
 			
@@ -134,11 +146,9 @@ public class CallableFutureTest {
 			System.out.println("线程执行结果："+fu.get());
 			System.out.println("future是否完成："+fu.isDone());
 			System.out.println(System.currentTimeMillis()+"执行完毕");
-		} catch (InterruptedException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (ExecutionException e) {
-			// TODO Auto-generated catch block
+			System.out.println("在get中捕获异常");
 			e.printStackTrace();
 		}
 		executor.allowCoreThreadTimeOut(true);
@@ -149,6 +159,7 @@ public class CallableFutureTest {
 	/**
 	 * submit(Runnable task, T result)方法：
 	 * T可以作为执行结果的返回值，而不需要使用get()方法来进行获得
+	 * 若在runnable中捕获异常，那么get方法算是成功，有返回值
 	 * 
 	 */
 	public void RunnableTest(){	
@@ -162,12 +173,11 @@ public class CallableFutureTest {
 		System.out.println(System.currentTimeMillis()+"开始执行");
 		try {
 			System.out.println("线程执行结果："+fu.get());
-			System.out.println(System.currentTimeMillis()+"执行完毕");
-		} catch (InterruptedException e) {
+			System.out.println(System.currentTimeMillis()+"执行完毕");			
+			System.out.println("future是否完成："+fu.isDone());
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (ExecutionException e) {
-			// TODO Auto-generated catch block
+			System.out.println("捕获get中的异常");
 			e.printStackTrace();
 		}
 		executor.allowCoreThreadTimeOut(true);
@@ -191,13 +201,13 @@ public class CallableFutureTest {
 		
 		Future<String> fu = executor.submit(myRunnable,name);	
 		try {
-			Thread.sleep(2000);
+			Thread.sleep(3000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-//		System.out.println(fu.cancel(true) + " "+fu.isCancelled());
-		System.out.println(fu.cancel(false) + " "+fu.isCancelled());
+		System.out.println(fu.cancel(true) + " "+fu.isCancelled());
+//		System.out.println(fu.cancel(false) + " "+fu.isCancelled());
 		
 	}
 	
@@ -229,37 +239,4 @@ public class CallableFutureTest {
 		}
 		
 	}
-	
-	/**
-	 * callable接口内报错的处理：
-	 *    如果报错，则进入catch语句块，而不继续执行get()方法
-	 */
-	public void callableExceptionTest(){	
-		try {
-			String name = "lolita";
-			MyCallable myCallable = new MyCallable(name);
-
-			ThreadPoolExecutor executor = new 
-					ThreadPoolExecutor(2, 2, 4, TimeUnit.SECONDS, new SynchronousQueue<Runnable>());
-			executor.allowCoreThreadTimeOut(true);
-			
-			Future<String> fu = executor.submit(myCallable);			
-			System.out.println("获得返回值："+fu.get(3, TimeUnit.SECONDS));			
-			
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (ExecutionException e) {
-			// TODO Auto-generated catch block
-			System.out.println("报错。。。");
-			e.printStackTrace();
-		} catch (TimeoutException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-	}
-	
-	
-
 }

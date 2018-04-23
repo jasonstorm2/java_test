@@ -8,7 +8,11 @@ import java.util.Date;
 
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
-
+/**
+ * 一个java源文件里可以有多个class，但只能由一个是public
+ * @author Administrator
+ *
+ */
 public class InnerClassTest {
 
 	public static void main(String[] args) {
@@ -69,7 +73,7 @@ public class InnerClassTest {
 		//由外部方法访问final变量
 		public void start(int interval,final boolean beep) {
 			//局部内部类
-			class TimePrinter implements ActionListener {
+			class TimePrinter2 implements ActionListener {
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					Date now = new Date();
@@ -79,14 +83,14 @@ public class InnerClassTest {
 				}
 
 		}
-			ActionListener listener = new TimePrinter();
+			ActionListener listener = new TimePrinter2();
 			Timer t = new Timer(interval, listener);
 			t.start();
 		}
 		/************************************************************************************/
 		//匿名内部类
 		public void start1(int interval,final boolean beep){
-			ActionListener listener = new ActionListener() {
+			ActionListener listener = new ActionListener() { //重写接口的方法
 				
 				@Override
 				public void actionPerformed(ActionEvent e) {

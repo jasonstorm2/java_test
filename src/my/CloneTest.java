@@ -78,6 +78,10 @@ public class CloneTest {
 		CloneTest.clone4();//深拷贝--利用序列化拷贝--比较方便
 	}
 	
+	/**
+	 * 说明两个引用student1和student2指向的是不同的对象
+	 * @throws CloneNotSupportedException
+	 */
 	public static void clone1() throws CloneNotSupportedException{
 		Student1 student1 = new Student1();
         student1.setName("ZhangSan");
@@ -107,6 +111,10 @@ public class CloneTest {
         // 说明两个引用student1和student2指向的是不同的对象
 	}
 	
+	/**
+	 * 浅拷贝，拷贝对象中的对象引用并没有改变。对象和拷贝对象 中的对象引用，是同一个引用
+	 * @throws CloneNotSupportedException
+	 */
 	public static void clone2() throws CloneNotSupportedException{
 		Teacher teacher = new Teacher();
         teacher.setName("Teacher Zhang");
@@ -138,17 +146,21 @@ public class CloneTest {
         // 所以说明是浅拷贝--Object类的clone()方法进行的是浅拷贝。
 	}
 	
+	/**
+	 * 深拷贝：重写clone方法，将那些对象的引用拷贝一遍，然后赋值
+	 * @throws CloneNotSupportedException
+	 */
 	public static void clone3() throws CloneNotSupportedException{
         Teacher1 teacher = new Teacher1();
         teacher.setName("Teacher Zhang");
         teacher.setAge(40);
 
-        Student4 student1 = new Student4();
-        student1.setName("ZhangSan");
-        student1.setAge(20);
-        student1.setTeacher(teacher);
+        Student4 student4 = new Student4();
+        student4.setName("ZhangSan");
+        student4.setAge(20);
+        student4.setTeacher(teacher);
 
-        Student4 student2 = (Student4) student1.clone();
+        Student4 student2 = (Student4) student4.clone();
         System.out.println("拷贝得到的信息");
         System.out.println(student2.getName());
         System.out.println(student2.getAge());
@@ -158,7 +170,7 @@ public class CloneTest {
 
         // 修改老师的信息
         teacher.setName("Teacher Zhang has changed");
-        System.out.println(student1.getTeacher().getName());
+        System.out.println(student4.getTeacher().getName());
         System.out.println(student2.getTeacher().getName());
 
         // 两个引用student1和student2指向不同的两个对象
@@ -168,6 +180,11 @@ public class CloneTest {
         // 改为深复制之后，对teacher对象的修改只能影响第一个对象
 	}
 	
+	/**
+	 * 利用序列化 来深拷贝对象
+	 * 对象，和对象中的其他对象都实现了Serializable接口
+	 * @throws Exception
+	 */
 	public static void clone4() throws Exception  {
 		    Teacher2 t = new Teacher2();
 	        t.setName("Teacher Wang");

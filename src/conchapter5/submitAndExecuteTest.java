@@ -31,7 +31,7 @@ public class submitAndExecuteTest {
 		
 		try {
 			Future<String> fu = executor.submit(thisClass.new MyCallable("A"));// 捕获异常
-			System.out.println(fu.get());  //有get方法才能捕获异常
+			System.out.println("Future捕获异常："+fu.get());  //有get方法才能捕获异常
 		} catch (Exception e) {
 			// TODO: handle exception
 			System.out.println("有异常抛出");

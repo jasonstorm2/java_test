@@ -22,12 +22,31 @@ public class ThreadTest extends Thread{
 	}
 	
 	public static void main(String[] args){
-		System.out.println("路径："+Thread.currentThread().getContextClassLoader().getClass().getPackage());
+//		System.out.println("路径："+Thread.currentThread().getContextClassLoader().getClass().getPackage());
+//		
+//		for(int i = 0; i<5;i++){
+//			new ThreadTest().start();
+//			System.out.println("ALL THREADS STARTED");
+//		}
 		
-		for(int i = 0; i<5;i++){
-			new ThreadTest().start();
-			System.out.println("ALL THREADS STARTED");
+		getThreadStace();
+	}
+	
+	public static void ThreadStace(){
+		StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
+		int i=0;
+		for (StackTraceElement ss : stackTrace) {
+			System.out.println("i的值："+i);
+			System.out.println(ss.getClassName()+""+ss.getFileName()+""+ss.getLineNumber()+""+ss.getMethodName());	
+			i++;
+			
 		}
+		System.out.println(stackTrace[2]);		
+	}
+	
+	
+	public static void getThreadStace(){
+		ThreadStace();
 	}
 
 }

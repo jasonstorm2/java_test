@@ -72,22 +72,7 @@ public class CalendarTest {
 		if(weekday!=firstdayofweek){
 			System.out.println();
 		}
-		
-		
-		
-//		int cnt = 1;
-//		do{			
-//			if(month==ca.get(Calendar.MONTH)){
-//				System.out.print(ca.get(Calendar.DAY_OF_MONTH)+"^");	
-//				System.out.print(ca.get(Calendar.DAY_OF_WEEK)+"   ");
-//			}
-//			ca.add(Calendar.DAY_OF_MONTH, 1);
-//			cnt++;
-//			if(cnt>=7){
-//				System.out.println();
-//				cnt=0;
-//			}
-//		}while(month==ca.get(Calendar.MONTH));
+
 		
 		CalendarTest cad = new CalendarTest();
 		cad.setTest(cad,"metoo");
