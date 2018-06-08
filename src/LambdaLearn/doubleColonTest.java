@@ -41,20 +41,20 @@ import java.util.concurrent.Callable;
  *         为了让编译器帮助我们确保一个接口满足FI的要求（也就是说有且仅有一个抽象方法）
  */
 
-public class doubleColonTest {
+public class doubleColonTest implements Functional3{
 	
 	public static Functional3 testMethodReference(){
-		System.out.println("测试::方法引用");
+		System.out.println("测试::方法引用1");
 		return null;
 	}
 	
 	public static Functional3<?, ?> testMethodReference2(){
-		System.out.println("测试::方法引用");
+		System.out.println("测试::方法引用2");
 		return (a,b)->12;
 	}
 	
 	public static String 中文(){
-		System.out.println("测试::方法引用");
+		System.out.println("测试::方法引用3");
 		return null;
 	}
 	
@@ -63,18 +63,33 @@ public class doubleColonTest {
 		int b = 1;
 		f3.sex(a, b);		
 	}
+	
+	public void testInvodeMethod2(Functional<String> f3){	
+	}
+	
 	public int testMethod(String s,Integer i){
 		return 1;		
 	}
 	
 	public static void main(String[] args) {
+		doubleColonTest thisClass = new doubleColonTest();	
+		//类强制转换为函数式接口测试
+		doubleTest2<String> d2 = new doubleTest2<String>();
+		Functional<String> f = (Functional<String>)(d2::method1);
+		f.judge("hahahaha");
+		//不用强制类型转化了。编译器自动识别转换
+		thisClass.testInvodeMethod2(d2::method1);
 		
-		/**有空再来修改2017.1**/
-		doubleColonTest thisClass = new doubleColonTest();		
-//		Functional3 s = thisClass ::testMethodReference();
-		thisClass.testInvodeMethod((a,b)->a);
-//		thisClass.testInvodeMethod(doubleColonTest::testMethod);
-
+		/**有空再来修改2017.1**/		
+		//::表示一个implement函数式接口的对象调用重写的方法。
+//		Functional3 s = thisClass::testMethodReference();
+		Functional3 s2 = thisClass.testMethodReference();
+		Functional3 s3 = thisClass::sex;
+		Functional3 s4 = (a,b)->{
+			return a;
+		};
+		Functional3 s5 = (a,b)->a;
+//		doubleColonTest  s6 = thisClass::sex; // 报错
 		/*
 		 * 需要注意的是，函数式接口的名称并不是 lambda 表达式的一部分。
 		 * 那么问题来了，对于给定的 lambda表达式，它的类型是什么？
@@ -99,11 +114,12 @@ public class doubleColonTest {
 		 * 当 lambda 的参数有两个而且它的类型可以被推导得知时，该参数列表外面的括号 !不可以! 被省略：
 		 */
 		Functional3<String,Boolean> ft = (a,b)->a ;
+		//获得一个Functional对象，重写了函数式接口的方法
 		Functional<String> f4 = a -> {
 			System.out.println("傻逼");
 			return a;
 		};
-		f4.judge("lala");
+		System.out.println(f4.judge("lala"));
 		
 		/**
 		 * lambda表达式对值封闭，对变量开放：lambda expressions close over values, not variables，
@@ -121,16 +137,19 @@ public class doubleColonTest {
 		System.out.println("这是一个打印");
 	}
 	
-//	public Object usePrint(doubleColonTest d){
-//		return doubleColonTest::print; //错误方法
-//	}
-	
 	public void forBlock(){//局部变量，全局变量，显示参数，隐式参数，匿名类，匿名内部类,类型擦除跟重载，编译类型，运行时类型？？？？？？？？？？？
 //		int i = 0;
 //		int sum = 0;
 //		for (int i = 1; i < 10; i += 1) { //这里会出现编译错误，因为i已经在for循环外部声明过了
 //		  sum += i;
 //		}
+	}
+
+	@Override
+	public Object sex(Object t, Object k) {
+		System.out.println("sex");
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
@@ -160,5 +179,21 @@ interface Functional2<T>{
 @FunctionalInterface  
 interface Functional3<T,K>{
 	abstract T sex(T t,K k);	
+}
+
+/**
+ * 类强制转换为函数式接口测试
+ * @author Administrator
+ *
+ * @param <T>
+ */
+class doubleTest2<T>{
+	
+	T method1(T t) {
+		System.out.println("类中的一个普通方法，跟要强制转换的函数式接口的输入输出参数相同！");
+		System.out.println(t);
+		return t;
+	}  // 默认是抽象的方法
+	
 }
 

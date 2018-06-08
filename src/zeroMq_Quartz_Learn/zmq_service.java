@@ -13,6 +13,7 @@ public class zmq_service {
 		ZMQ.Socket socket = context.socket(ZMQ.REP);
 		socket.bind("tcp://127.0.0.1:5555");  //绑定端口；
 		int i=0;
+		System.out.println("zmq服务端开启............");
 		while(true){
 			
 			byte[] req = socket.recv(); // 获取request发送过来的数据
@@ -27,9 +28,6 @@ public class zmq_service {
 			}
 		}		
 		socket.close(); //关闭socket
-		context.close();//关闭 上下文
-		
-		
-		
+		context.close();//关闭 上下文		
 	}
 }

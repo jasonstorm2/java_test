@@ -291,9 +291,10 @@ public class lambdaTest {
 		 * lambda表达式 类方法 的引用 1.lambda代码中实现代码只有一行， 2.该行是一个静态方法
 		 * 3.该静态方法的参数与函数式接口的参数一致，且返回值类型相同
 		 */
-		MyFunction<String> myFun = lambdaTest::doubleTest;		
-		String doubleTestRes = myFun.oneMethod("123");
-		System.out.println(doubleTestRes);
+		MyFunction<String> myFun = lambdaTest::doubleTest;	//反正是一个调用方法
+		MyFunction<String> myFun11 = thisClass::doubleTest2;//反正是一个调用方法
+		String doubleTestRes = myFun.oneMethod("123"); //执行方法
+		System.out.println("f:"+doubleTestRes);
 		/**
 		 * lambda表达式 对象方法 的引用 1.双引号左边是对象 2.双引号右边是对象的方法 3.对象的方法的参数和返回值要和函数式接口的一样
 		 */
@@ -832,6 +833,7 @@ public class lambdaTest {
 
 	public static String doubleTest(String ss) {
 		ss = "&&&&&&&&&&&&&&&& " + ss + " this is result";
+		System.out.println("方法组装");
 		return ss;
 	}
 	

@@ -20,37 +20,41 @@ public class implementsMyFunction implements MyFunction<String>{
 
 	public static void main(String[] args) {
 		implementsMyFunction thisClass =  new implementsMyFunction();
-		
-		
+		myfun fun = new myfun();
 
         cache.put(0, 0);  
         cache.put(1, 1);  
         implementsMyFunction.fibonacciJava8(8);
         System.out.println("获得缓存中8的值："+cache.get(8));
         
-        MyFunction<Integer> myFuc = (Integer a)->a+1;
+        //实例化一个函数式对象，并且定义了该对象的抽象方法--lamda表达式：(Integer a)->a+1 就代表了一个对象了
+        MyFunction<Integer> myFuc = (Integer a)->a+1; 
         int rest = myFuc.oneMethod(4);
         System.out.println("使用自定义的函数式接口："+rest);
         
-		// 开始一个线程，使用lambda方法
+		// 开始一个线程，使用lambda方法  java.lang.Thread.Thread(Runnable target, String name)
+        //实例化一个Runnable函数式对象，并且定义了该对象的抽象方法
 		new Thread(()->{System.out.println("开始一个线程，使用lambda方法");}, "lambda线程").start();
 		
 		// 本类的对象（是一个myFunction对象）调动本类的方法，该方法需要一个myFunction接口的实现对象
 		//--此处类似匿名内部类的实例
+		System.out.println("------------------------------");
 		thisClass.useFunc(a->{
-			System.out.println("调用对象中含有函数式接口参数的方法");
-			return "long";
+			System.out.println("***调用对象中含有函数式接口参数的方法");
+			return a;
 		});	
+		//参数 thisClass::oneMethod 和 thisClass 没有什么区别吗
+		System.out.println("------------------------------");
 		thisClass.useFunc(thisClass::oneMethod);
-//
+		System.out.println("------------------------------");
 		thisClass.useFunc(thisClass);
+		System.out.println("------------------------------");
 		thisClass.useFunc(a->"mess");
+		System.out.println("------------------------------");
 		thisClass.useFunc(a->{return "mess";});
-		
+		System.out.println("------------------------------");
 		useFunc2(thisClass);
-		System.out.println(thisClass.oneMethod("随便返回"));
-		thisClass.oneMethod("suibian");
-		
+//		useFunc2(fun); //报错，虽然lambda结构一样
 		List<String> list = Arrays.asList("ab","lady","amine","count");
 		List<String> list2 =  Stream.of("ab","lady","amine","count").collect(Collectors.toList());
 		
@@ -75,24 +79,27 @@ public class implementsMyFunction implements MyFunction<String>{
 //		});
 		// 此处有点怪异，System.out::println是一个Consumer对象吗？
 		list.forEach(System.out::println);
+		list.forEach((a)->{
+			System.out.println("打印："+a);
+		});
 //		thisClass.useFunc({implementsMyFunction::testMethod});
 //		implementsMyFunction ss = implementsMyFunction::thisMethod;
 		
 	}
 	
 	public void useFunc(MyFunction<String> mm){
-		
+		//这是一个空的方法，方法体没有任何操作		
 	}
 	public static void useFunc2(MyFunction<String> mm){
-		mm.oneMethod("：：使用参数的方法");
+		String str = mm.oneMethod("：：使用参数的方法");
+		System.out.println(str+"**");
 	}
 
 	@Override
 	public String oneMethod(String t) {
 		// TODO Auto-generated method stub
-		String str = "override oneMethod";
 		System.out.println("重写函数式接口的抽象方法oneMethod,并返回" + t);
-		return str;
+		return t;
 	}
 	
 	public  static void filter(List<String> str,Predicate pr){
@@ -168,9 +175,37 @@ public class implementsMyFunction implements MyFunction<String>{
     public <R> implementsMyFunction change(Function<? super String, ? extends String> mapper){
 		return null;    	
     }
-    
-    
+}
 
+@FunctionalInterface  
+interface MyFunction<T> {
+	T oneMethod(T t);	
+	static void testMethod(){System.out.println("接口里的静态方法testMethod");};
+	
+	default void defaultTest1(){ //默认方法可以被继承的类重写，也可以直接拿来用
+		System.out.println("This is a default method1");
+	};
+	default void defaultTest2(){
+		System.out.println("This is a default method2");
+	};
+	default void defaultTest3(){
+		System.out.println("This is a default method3");
+	};	
+}
+
+@FunctionalInterface  
+interface MyFunction2<T> {
+	 T accept(T t);
+}
+
+class myfun implements MyFunction2<String>{
+
+	@Override
+	public String accept(String t) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 }
 
 

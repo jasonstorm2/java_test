@@ -1,12 +1,12 @@
 package nettyLearn;
 
 import io.netty.bootstrap.ServerBootstrap;
+import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 
-public class HelloServer {
+public class DiscardServerHandler extends ChannelHandlerAdapter{
 	public static void main(String[] args) {
-		//server·þÎñ Æô¶¯Æ÷
-		ServerBootstrap bootstrap = new ServerBootstrap();
+		
 	}
 
 }

@@ -36,7 +36,9 @@ public class GenericTypeFactory {
 	//加入泛型
 	/*
 	 * 直接通过 类对象，反射得到类实例
+	 *
 	 */
+	// 修饰符，泛型类型，返回值，方法名（参数）
 	public static <F> F getInstance3(Class<F> cls){
 		try{			
 			return cls.newInstance();

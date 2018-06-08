@@ -4,6 +4,7 @@ package my;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.message.ParameterizedMessage;
 import org.slf4j.LoggerFactory;
 
 /**
@@ -114,7 +115,18 @@ public class LoggerTest {
 		logger2.debug("debug");
 		logger2.trace("trace");
 		
-
+		/********************************/
+		String str = "{}个大傻逼";		
+		System.out.println(LoggerTest.StringMax(str, 1));
+	}
+	
+	/**
+	 * log4j的字符串组装方法
+	 * @param str
+	 * @param objs
+	 */
+	public static String StringMax(String str,Object... objs){
+		return ParameterizedMessage.format(str, objs);
 	}
 
 }

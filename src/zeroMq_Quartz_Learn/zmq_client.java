@@ -18,7 +18,7 @@ public class zmq_client {
 				public void run() {
 					// TODO Auto-generated method stub
 					ZMQ.Context context = ZMQ.context(1);//表示创建用于一个I/O线程的 context
-					ZMQ.Socket socket = context.socket(ZMQ.REQ);
+					ZMQ.Socket socket = context.socket(ZMQ.REQ); //zmq模式，客户端请求
 					socket.connect("tcp://127.0.0.1:5555");  //与服务端建立连接
 			
 					String req = "hello";
