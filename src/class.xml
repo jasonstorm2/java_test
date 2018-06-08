@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><bookstore>
+	<book id="lalala">
+		<name>冰与火</name>
+		<name2>冰与火</name2>
+		<author>乔治马丁</author>
+		<price>89</price>
+	</book>
+</bookstore>
