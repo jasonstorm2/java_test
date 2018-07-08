@@ -20,7 +20,7 @@ public class NClient {
 	public void init() throws IOException{
 		selector = Selector.open();
 		InetSocketAddress isa = new InetSocketAddress("127.0.0.1",PORT);
-		
+		// 打开对服务器的连接通道。服务器不存在则报错
 		sc = SocketChannel.open(isa);
 		sc.configureBlocking(false);
 		sc.register(selector, SelectionKey.OP_READ);
