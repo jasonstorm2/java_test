@@ -2,6 +2,11 @@ package JavaCoreLearn;
 
 import java.util.Arrays;
 
+/**
+ * Arrays.sort 对数组进行排序
+ * @author LiZhenhua
+ *
+ */
 public class EmployeeSortTest {
 	public static void main(String[] args) {
 		Employee[] staff = new Employee[3];

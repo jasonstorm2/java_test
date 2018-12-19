@@ -3,7 +3,7 @@ package my;
 /**
  * 测试 String类的contain方法，看看String对象是否包含某个String片段
  * 结果：若是连续片段，则是true
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class StringContainTest {

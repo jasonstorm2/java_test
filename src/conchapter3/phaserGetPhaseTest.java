@@ -9,7 +9,7 @@ import java.util.concurrent.Phaser;
  * 
  * getPhase() 获取线程所处的第几个屏蔽点
  * onAdvance() Phaser重写该方法，每次通过屏蔽点时被调动，返回true时，屏障被取消，返回false Phaser继续工作
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class phaserGetPhaseTest {

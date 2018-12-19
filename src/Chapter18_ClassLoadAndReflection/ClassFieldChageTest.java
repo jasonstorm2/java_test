@@ -3,7 +3,7 @@ package Chapter18_ClassLoadAndReflection;
 
 /**
  * 测试类，调用反射方法，动态改变类的域
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class ClassFieldChageTest {

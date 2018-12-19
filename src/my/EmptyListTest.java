@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * 测试 空集合。
  * 空集合的值不能改变，也就是说无法添加新的值
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class EmptyListTest {

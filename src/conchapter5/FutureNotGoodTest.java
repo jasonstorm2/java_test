@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
  * 
  * 本类证明线程池的无序性，即执行的顺序跟开始的顺序不一定一致
  * 为了解决这个问题，第六章提出了解决方案
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class FutureNotGoodTest {

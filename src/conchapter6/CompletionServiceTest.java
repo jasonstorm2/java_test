@@ -28,7 +28,7 @@ import java.util.concurrent.TimeUnit;
  * 
  *  poll(long timeout,TimeUnit unit)  :等待指定的timeout时间，在该时间内获取到值时，立刻向下运行。如果超时也立刻向下执行
  * 
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class CompletionServiceTest {

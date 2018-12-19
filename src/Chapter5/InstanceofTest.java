@@ -3,7 +3,7 @@ package Chapter5;
 /**
  * instanceof 与(type)类型转算以及 +,-等，都是运算符
  * 判断的是 运行时的类型
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class InstanceofTest {

@@ -9,7 +9,7 @@ import java.util.concurrent.Executors;
 /**
  * 
  * 异常分析  线程池为单线程
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class CompletionServiceExceptionTest {

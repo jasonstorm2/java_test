@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
  * submit： 有返回值  可以捕获异常（调用get方法）
  * execute：无返回值  出现异常直接打印信息  也可以捕获异常（自定义线程工厂）
  * 
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class submitAndExecuteTest {

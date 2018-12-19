@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 
 /**
  * 本例测试 通过注释类，绑定按钮和监听器
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class Anno2AnnotationTest {

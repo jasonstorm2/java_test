@@ -12,7 +12,7 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 /**
  * netty 不只可以处理 nio类型的数据，也可以处理oio等类型的数据
  * nio是目前使用最多的传输类型，transport 
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class DiscardServer {

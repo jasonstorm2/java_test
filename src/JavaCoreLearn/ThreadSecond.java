@@ -30,7 +30,7 @@ package JavaCoreLearn;
  * 
  * 记住：多线程就是分时利用CPU，宏观上让所有线程一起执行 ，也叫并发
  * 
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class ThreadSecond implements Runnable{

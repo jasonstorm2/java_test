@@ -74,11 +74,9 @@ public class doubleColonTest implements Functional3{
 	public static void main(String[] args) {
 		doubleColonTest thisClass = new doubleColonTest();	
 		//类强制转换为函数式接口测试
-		doubleTest2<String> d2 = new doubleTest2<String>();
-		Functional<String> f = (Functional<String>)(d2::method1);
-		f.judge("hahahaha");
+		thisClass.testInvodeMethod2((Functional<String>)(new doubleTest2<String>()::method1));		
 		//不用强制类型转化了。编译器自动识别转换
-		thisClass.testInvodeMethod2(d2::method1);
+		thisClass.testInvodeMethod2(new doubleTest2<String>()::method1);
 		
 		/**有空再来修改2017.1**/		
 		//::表示一个implement函数式接口的对象调用重写的方法。
@@ -183,7 +181,8 @@ interface Functional3<T,K>{
 
 /**
  * 类强制转换为函数式接口测试
- * @author Administrator
+ * Class ----> Function
+ * @author LiZhenhua
  *
  * @param <T>
  */

@@ -6,7 +6,7 @@ import java.util.Date;
  * join()等待线程终止，主线程才继续运行
  * 
  * join(x) 等待x时长，如果线程还没运行完，主线程继续运行
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class JoinTest {

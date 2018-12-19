@@ -7,7 +7,7 @@ import java.util.concurrent.Semaphore;
  * 此类是用来限制线程并发的数量的
  * 本例使用的类有:Semaphore
  * 本例使用的方法有：Semaphore的getQueueLength()，hasQueuedThreads()
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class semaphoreTest5 {
@@ -24,7 +24,7 @@ public class semaphoreTest5 {
 	/**
 	 * getQueueLength() 获取等待许可的线程数量
 	 * hasQueuedThreads() 判断是否有线程在等待
-	 * @author Administrator
+	 * @author LiZhenhua
 	 *
 	 */
 	class Service{

@@ -26,7 +26,7 @@ import java.net.Socket;
  * = new Socket(); 
  * ss2.connect(new InetSocketAddress(InetAddress.getLocalHost(), 1022), 10000);
  * 
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class note8_SocketClient {

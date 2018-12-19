@@ -9,7 +9,7 @@ import java.lang.annotation.Annotation;
  * 
  * 类在添加注释时，可以给该注释的变量赋新值：@AnnotationTest(name="ji")
  * 
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class AnnotationUse {

@@ -21,7 +21,7 @@ import java.util.concurrent.Phaser;
  * 第一个阶段A,B相互等待 ，线程注册数2
  * 第二个阶段A执行，       线程注册数1
  * 第三个阶段B执行         线程注册数1
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class phaserDeregisterTest {

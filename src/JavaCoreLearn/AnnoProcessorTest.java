@@ -8,7 +8,7 @@ import java.lang.reflect.Method;
  *  
  * Class.forName(clazz)，路径是本项目中的类的路径：包名.类名
  * 
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class AnnoProcessorTest {

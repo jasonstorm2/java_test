@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
  * 
  * 继承ThreadPoolExecutor类，重写两个方法：afterExecute beforeExecute
  * 
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class AfterBeforeExecuteTest {
@@ -62,7 +62,7 @@ public class AfterBeforeExecuteTest {
 	/**
 	 * 继承ThreadPoolExecutor，重写执行前和执行后两个方法
 	 * 构造器必须重写
-	 * @author Administrator
+	 * @author LiZhenhua
 	 *
 	 */
 	class  MyThreadPoolExecutor extends ThreadPoolExecutor{

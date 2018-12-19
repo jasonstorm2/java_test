@@ -6,7 +6,7 @@ import java.io.IOException;
 
 /**
  * 
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class FileInputStreamTest {

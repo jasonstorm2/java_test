@@ -3,9 +3,11 @@ package utils;
 import java.io.File;
 import java.io.InputStream;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -114,6 +116,24 @@ public class utils {
 			str = "[]";
 		}
 		return JSON.parseArray(str);
+	}
+	
+	/**
+	 * 打印分割线
+	 */
+	public static void PrintLine(String str){
+		System.out.println("-------------------------------------------------"+str+"-------------------------------------------------");
+	}
+	
+	/**
+	 * 打印当前时间
+	 * @param str
+	 */
+	public static void PrintTimeNow(){
+		Date date = new Date();		
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+		String time = format.format(date);
+		System.out.println(time);		
 	}
 
 }

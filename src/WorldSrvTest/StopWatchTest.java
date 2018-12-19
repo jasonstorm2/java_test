@@ -3,11 +3,11 @@ package WorldSrvTest;
 import org.apache.commons.lang3.time.StopWatch;
 
 /**
- * Ê¹ÓÃStopWatch±ØÐëµ¼ÈëApacheµÄjar°ü 
- * StopWatchÊÇÒ»¸ö¼ÆÊ±Æ÷£¬Óë»úÆ÷Ê±¼äÎÞ¹Ø£¬µ±startÊ±£¬Ê±¼ä´Ó0¿ªÊ¼×ß¡£¡£¡£
- * Ö±µ½stop£¬ÖÐ¼ä¼ÆÊ±Æ÷¿ÉÒÔÔÝÍ££¬È»ºóÓÖ»Ö¸´¼ÆÊ±£»ÔÝÍ£µÄÊ±¼ä¶Î£¬²»¼ÆÈë¼ÆÊ±Æ÷¼ÆÊ±ÄÚ
+ * Ê¹ï¿½ï¿½StopWatchï¿½ï¿½ï¿½ëµ¼ï¿½ï¿½Apacheï¿½ï¿½jarï¿½ï¿½ 
+ * StopWatchï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Þ¹Ø£ï¿½ï¿½ï¿½startÊ±ï¿½ï¿½Ê±ï¿½ï¿½ï¿½0ï¿½ï¿½Ê¼ï¿½ß¡ï¿½ï¿½ï¿½ï¿½ï¿½
+ * Ö±ï¿½ï¿½stopï¿½ï¿½ï¿½Ð¼ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í£ï¿½ï¿½È»ï¿½ï¿½ï¿½Ö»Ö¸ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½Í£ï¿½ï¿½Ê±ï¿½ï¿½Î£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
  * 
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 
@@ -16,18 +16,18 @@ import org.apache.commons.lang3.time.StopWatch;
 public class StopWatchTest {
 	
 	/**
-	 * ²âÊÔ split·½·¨
+	 * ï¿½ï¿½ï¿½ï¿½ splitï¿½ï¿½ï¿½ï¿½
 	 * @throws InterruptedException
 	 */
 	private static void test01() throws InterruptedException {
-		System.out.println("·½·¨µÄÃû×Ötest01");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½test01");
 	    StopWatch watch = new StopWatch();  
 	    watch.start();
 	    Thread.sleep(1000);  
-	    watch.split();  //¼ÇÂ¼µ±Ç°·ÖÀëµÄÊ±¼ä
+	    watch.split();  //ï¿½ï¿½Â¼ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
 	    /* 
 	     * This is the time between start and latest split. 
-	     * µ÷ÓÃstart()·½·¨µ½×îºóÒ»´Îµ÷ÓÃsplit()·½·¨ºÄÓÃµÄÊ±¼ä 
+	     * ï¿½ï¿½ï¿½ï¿½start()ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½Îµï¿½ï¿½ï¿½split()ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ãµï¿½Ê±ï¿½ï¿½ 
 	     */  
 	    Thread.sleep(2000);  
 //	    watch.split();  
@@ -35,49 +35,49 @@ public class StopWatchTest {
 	    /* 
 	     * This is either the time between the start and the moment this method 
 	     * is called, or the amount of time between start and stop 
-	     * µ÷ÓÃstart()·½·¨µ½µ÷ÓÃgetTime()»òstop()·½·¨ºÄÓÃµÄÊ±¼ä 
+	     * ï¿½ï¿½ï¿½ï¿½start()ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½getTime()ï¿½ï¿½stop()ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ãµï¿½Ê±ï¿½ï¿½ 
 	     */  
 	    System.out.println("watch.getTime():"+watch.getTime());
 	    
-	    //×îºóÒ»´ÎÖ´ÐÐµÄÊ±¼ä¼ä¸ô - µ±Ç°Ê±¼ä
+	    //ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ö´ï¿½Ðµï¿½Ê±ï¿½ï¿½ï¿½ï¿½ - ï¿½ï¿½Ç°Ê±ï¿½ï¿½
 	    System.out.println(watch.getTime()-watch.getSplitTime());
 
 	}  
 	
 	
 	/**
-	 * ²âÊÔ ¸´Î» reset·½·¨
+	 * ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Î» resetï¿½ï¿½ï¿½ï¿½
 	 * @throws InterruptedException
 	 */
 	private static void test02() throws InterruptedException {
-		System.out.println("·½·¨µÄÃû×Ötest02");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½test02");
 	    StopWatch watch = new StopWatch();  
 	    watch.start();  
 	    Thread.sleep(1000);  
-	    System.out.println("stopwatch×ßÁË¶à³¤Ê±¼ä£º"+watch.getTime());  
-	    /* ¸´Î» ¹éÁã */  
+	    System.out.println("stopwatchï¿½ï¿½ï¿½Ë¶à³¤Ê±ï¿½ä£º"+watch.getTime());  
+	    /* ï¿½ï¿½Î» ï¿½ï¿½ï¿½ï¿½ */  
 	    watch.reset();  
-	    //¹éÁãºó£¬ÒªÔÙÒ»´ÎÆô¶¯£¬Ïàµ±ÓÚÖØÐÂÆô¶¯
+	    //ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½àµ±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	    watch.start();  
 	    Thread.sleep(1000);  
 	    System.out.println(watch.getTime());  
 	} 
 	
 	/**
-	 * ²âÊÔ ÔÝÍ£¼ÆÊ±Æ÷·½·¨suspend() ºÍ resume()·½·¨
+	 * ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Í£ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½suspend() ï¿½ï¿½ resume()ï¿½ï¿½ï¿½ï¿½
 	 * @throws InterruptedException
 	 */
 	private static void test03() throws InterruptedException{
-		System.out.println("·½·¨µÄÃû×Ötest03");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½test03");
 	    StopWatch watch = new StopWatch();  
 	    watch.start();  
 	    Thread.sleep(1000);  
 	    System.out.println(watch.getTime());  
-	    /* ÔÝÍ£ */  
-	    watch.suspend();   //ÔÝÍ£ºó£¬Ö±µ½»Ö¸´ Õâ¶ÎÊ±¼ä£¬²»¼ÆÈë¼ÆÊ±Ê±¼ä
+	    /* ï¿½ï¿½Í£ */  
+	    watch.suspend();   //ï¿½ï¿½Í£ï¿½ï¿½Ö±ï¿½ï¿½ï¿½Ö¸ï¿½ ï¿½ï¿½ï¿½Ê±ï¿½ä£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±Ê±ï¿½ï¿½
 	    System.out.println("do something");  
 	    Thread.sleep(2000);  
-	    /* »Ö¸´ */  
+	    /* ï¿½Ö¸ï¿½ */  
 	    watch.resume();  
 	    Thread.sleep(2000);  
 	    System.out.println(watch.getTime());  

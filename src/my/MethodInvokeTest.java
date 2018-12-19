@@ -10,7 +10,7 @@ import java.lang.reflect.Method;
  * Field反射：
  * 1，Class对象通过getField方法获得Field对象
  * 2，Field对象通过get（Class.newInstance）方法 获得域值
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class MethodInvokeTest {

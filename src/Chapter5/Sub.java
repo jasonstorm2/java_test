@@ -6,7 +6,7 @@ package Chapter5;
  * 
  * 子类实例化前，会先调用父类的无参数构造方法，若在此方法内，调用一个被子类重写的方法，那么就会执行这个被子类重写的方法，而不是父类中的方法
  * 所以，很容易出错
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class Sub extends Base {

@@ -7,7 +7,7 @@ import java.util.Map;
  * putAll测试：putAll可以合并两个map,如果两个map有相同的key,那么取被putAll的map的值(后面的覆盖前面的)
  * 
  * putAll()方法并不会改变被put的map的引用
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class MapPutAllTest {

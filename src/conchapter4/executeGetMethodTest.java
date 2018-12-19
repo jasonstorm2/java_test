@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
  * 
  * 以及，接口runnable在线程池中执行时乱序的。。。。
  * 
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class executeGetMethodTest {
@@ -70,7 +70,7 @@ public class executeGetMethodTest {
 	/**
 	 * 继承ThreadPoolExecutor，重写执行前和执行后两个方法
 	 * 构造器必须重写
-	 * @author Administrator
+	 * @author LiZhenhua
 	 *
 	 */
 	class  MyThreadPoolExecutor extends ThreadPoolExecutor{

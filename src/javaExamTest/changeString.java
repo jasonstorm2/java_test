@@ -2,7 +2,7 @@ package javaExamTest;
 
 /**
  * 修改字符串String对象
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 //判断输出的值是什么。。。

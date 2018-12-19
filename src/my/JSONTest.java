@@ -22,7 +22,7 @@ import utils.utils;
  * JSON.toJSONString(obj) 可以把任意 object转换为 string格式
  * jb 的 toJSONString 和 ja 的toJSONString 是调用父类 JSON 的toJSONString 方法，是同一个方法
  * 
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class JSONTest {

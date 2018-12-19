@@ -10,7 +10,7 @@ package JavaCoreLearn;
  * 启动线程，最终都需要Thread类的对象
  * 实际上 Thread 实现了 runnable接口
  * 
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 class Thread33 implements Runnable { // 实现了Runnable接口，jdk就知道这个类是一个线程  

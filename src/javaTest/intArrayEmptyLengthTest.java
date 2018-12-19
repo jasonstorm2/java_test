@@ -6,7 +6,7 @@ package javaTest;
  * iint[] blankArray = new int[0]; 也是定义了一个长度为0的数组对象
  * 
  * int[] res数组长度为0的，里面没有元素，res[0]报空，因为没有下标为0的元素存在
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class intArrayEmptyLengthTest {

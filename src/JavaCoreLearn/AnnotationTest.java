@@ -12,7 +12,7 @@ import java.lang.annotation.Target;
  * 该类有两个变量，都设置有默认值，成员变量以方法的形式来定义
  * 		在使用该注释时可以重设这两个变量，格式：@AnnotationTest(name="ji",age = 222)
  * 
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 @Target(ElementType.TYPE)

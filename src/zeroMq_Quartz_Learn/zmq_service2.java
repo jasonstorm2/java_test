@@ -5,7 +5,7 @@ import org.zeromq.ZMQ;
 
 /**
  * 服务端zmq
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class zmq_service2 {
@@ -20,8 +20,11 @@ public class zmq_service2 {
 		int i=0;
 		System.out.println("zmq服务端开启............");
 		while(true){
+			System.out.println("true");
 			byte[] req = new byte[1204];
+			System.out.println("waiting.............");
 			int recvLen = socket.recv(req, 0, req.length, ZMQ.DONTWAIT);
+			System.out.println("receive.!!!!!!!!!!!!");
 			if(recvLen != -1){
 				System.out.println("服务端收到信息："+ new String(req));
 				String res = "我是服务端，已经收到信息";

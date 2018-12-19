@@ -5,7 +5,7 @@ public class OuterClass {
 	
 	/**
 	 * 内部类
-	 * @author Administrator
+	 * @author LiZhenhua
 	 *
 	 */
 	public class InnerClass{
@@ -18,7 +18,7 @@ public class OuterClass {
 	
 	/**
 	 * 静态嵌套类
-	 * @author Administrator
+	 * @author LiZhenhua
 	 *
 	 */
 	static class StaticNestedClass{

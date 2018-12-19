@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
  * CompletionService.submit(Callable);有返回值 		使用Callable
  * CompletionService.submit(Runnable,V v);有返回值	使用Runnable,必须加返回的类型
  * 
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class CompletionSubmitReturnTest {

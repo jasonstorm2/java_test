@@ -6,7 +6,7 @@ import java.util.Map.Entry;
 
 /**
  * 测试putall 方法是否是深复制
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class MapEntryCloneTest {

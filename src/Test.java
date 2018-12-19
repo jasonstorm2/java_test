@@ -6,7 +6,7 @@ class Sneeze extends Annoyance {}
  
 /**
  * 判处异常的捕获与异常及其继承者的关系
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class Test {

@@ -225,7 +225,7 @@ public class lambdaExecise {
 
 /**
  * 
- * @author Administrator
+ * @author LiZhenhua
  * 艺术家结构体
  */
 class Artist {
@@ -303,7 +303,7 @@ class Artist {
 
 /**
  * 专辑结构体
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 class Album implements Performance{

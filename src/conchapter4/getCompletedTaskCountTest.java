@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 返回已经执行完毕的任务数量
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class getCompletedTaskCountTest {

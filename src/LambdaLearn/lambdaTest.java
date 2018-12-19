@@ -33,7 +33,7 @@ import java.util.stream.Collector.Characteristics;
  * 
  * Stream<T> 流只能被操作一次，重复操作会报错
  * 
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class lambdaTest {
@@ -753,7 +753,7 @@ public class lambdaTest {
 	 * 􀅖 最终结果的类型，这里依然是
 	 * String。
 	 * 
-	 * @author Administrator
+	 * @author LiZhenhua
 	 *
 	 */
 	static class StringCollector implements Collector<String, StringCombiner, String> {

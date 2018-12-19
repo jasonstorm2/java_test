@@ -9,7 +9,7 @@ import java.util.concurrent.Semaphore;
  * 本例使用的类有：Semaphore的acquireUninterruptibly()，release()
  * 
  * 使用acquireUninterruptibly() 或 Semaphore的acquireUninterruptibly(int permits)方法后，等待的线程不能被中断
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class semaphoreTest4 {
@@ -35,7 +35,7 @@ public class semaphoreTest4 {
 	
 	/**
 	 * Semaphore对象 使用acquireUninterruptibly() 或 Semaphore的acquireUninterruptibly(int permits)方法后，等待的线程不能被中断
-	 * @author Administrator
+	 * @author LiZhenhua
 	 *
 	 */
 	class Service{

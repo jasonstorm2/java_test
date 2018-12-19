@@ -4,7 +4,7 @@ import org.zeromq.ZMQ;
 
 /**
  * ·þÎñ¶Ëzmq
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class zmq_service {

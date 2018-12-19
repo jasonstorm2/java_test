@@ -11,7 +11,7 @@ import java.util.concurrent.TimeoutException;
  * 
  * exchanger.exchange("Thread1")
  * exchanger.exchange(V value,long timeout,TimeUnit unit) 指定时间内没有其他线程通信，则出现异常
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class ExchangeTest {

@@ -10,7 +10,7 @@ import io.netty.channel.ChannelInboundHandlerAdapter;
 
 /**
  * 测试 ByteBuf的各种方法
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class ByteBufTest extends ChannelInboundHandlerAdapter{

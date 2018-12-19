@@ -1,7 +1,7 @@
 package Chapter5;
 /**
  * ÀàµÄ ¶àÌ¬
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 class BaseClass{

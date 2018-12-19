@@ -23,7 +23,7 @@ import utils.utils;
 
 /**
  * 
- * @author Administrator
+ * @author LiZhenhua
  *1.串行化能保存的元素 ---static 变量不能保存
  *  串行化只能保存对象的非静态成员变量，不能保存任何的成员方法和静态的成员变量，
  *  而且串行化保存的只是变量的值，对于变量的任何修饰符都不能保存。
@@ -104,7 +104,7 @@ public class SerializableTest {
    当Person对象被保存到person.out文件中之后，我们可以在其它地方去读取该文件以还原对象，
    但必须确保该读取程序的CLASSPATH中包含有Person.class(哪怕在读取Person对象时并没有显示地使用Person类，如上例所示)，
    否则会抛出ClassNotFoundException。
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 class Student implements Serializable{
@@ -158,7 +158,7 @@ class Student implements Serializable{
  * 使用Externalizable进行序列化，当读取对象时，会调用被序列化类的无参构造器去创建一个新的对象，
  * 然后再将被保存对象的字段的值分别填充到新对象中。这就是为什么在此次序列化过程中Person类的无参构造器会被调用。
  * 由于这个原因，实现Externalizable接口的类必须要提供一个无参的构造器，且它的访问权限为public。
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 class Student2 implements Externalizable{

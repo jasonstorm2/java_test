@@ -9,7 +9,7 @@ import utils.utils;
  * 1. map 值的排序测试
  * 
  * 2. map 是否能放空值，是否空值能代替赋值
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class MapSortTest {

@@ -32,10 +32,10 @@ class MyInvokationHandler implements InvocationHandler{
 		System.out.println("-------正在执行的方法："+method);
 		
 		if(proxy instanceof Person2){
-			System.out.println("they are the SAME");
+			System.out.println("proxy instanceof Person2");
 		}
 		if(proxy instanceof Person3){
-			System.out.println("they are 88888888888");
+			System.out.println("proxy instanceof Person3");
 		}
 		
 		if(args != null){

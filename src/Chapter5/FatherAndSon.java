@@ -9,7 +9,7 @@ package Chapter5;
  * 变量的定义和初始化 早于构造器的调用？？
  * 
  * 方法早于对象存在？？
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class FatherAndSon {

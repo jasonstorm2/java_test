@@ -97,16 +97,16 @@ public class LoggerTest {
 		logger.info("我是info信息");
 		logger.debug("我是debug信息");
 		logger.trace("我是trace信息");
-		
+		logger.info("this is a message");
 
 		
 		logger.log(Level.DEBUG,"我是debug信息");//这个就是定制level类型的调用
 //		logger.exit();//和entry对应的结束方法
 	}
-	public static void main(String[] args) {		
-		LoggerTest logt= new LoggerTest();
-		logger.info("this is a message");
-//		
+	public static void main(String[] args) {	
+		utils.utils.PrintLine("构造函数里org.apache.logging.log4j.Logger类的日志");
+		LoggerTest logt= new LoggerTest();		
+		utils.utils.PrintLine("org.slf4j.Logger类的日志");
 		org.slf4j.Logger  logger2 =  LoggerFactory.getLogger("CORE");
 		String d = "******";
 		logger2.error("error");
@@ -116,6 +116,7 @@ public class LoggerTest {
 		logger2.trace("trace");
 		
 		/********************************/
+		utils.utils.PrintLine("log4j的字符串组装方法");
 		String str = "{}个大傻逼";		
 		System.out.println(LoggerTest.StringMax(str, 1));
 	}

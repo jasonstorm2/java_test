@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
  * 4.DiscardPolicy 当任务添加到线程池中被拒绝时,把被拒绝的任务被抛弃
  * 
  * 
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class ForRefusePolicyTest {

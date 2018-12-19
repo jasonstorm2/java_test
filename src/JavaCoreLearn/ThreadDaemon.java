@@ -2,7 +2,7 @@ package JavaCoreLearn;
 
 /**
  * 守护进程（后台进程）
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class ThreadDaemon extends Thread{

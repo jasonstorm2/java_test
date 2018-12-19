@@ -2,7 +2,7 @@ package javaExamTest;
 
 /**
  * for£¨£©Ñ­»·µÄÂß¼­
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 

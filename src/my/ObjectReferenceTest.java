@@ -7,7 +7,7 @@ import java.util.Map.Entry;
 /**
  * 测试 a对象赋值给b对象后，b对象值的改变会不会影响到a对象。
  * 结论：会影响。。对象的赋值其实是引用Reference的传递
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class ObjectReferenceTest {

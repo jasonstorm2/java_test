@@ -7,7 +7,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * 关于多线程维护一个ConcurrentHashMap的操作
  * http://www.cnblogs.com/zhuawang/p/4779649.html
  * 
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class ConcurrencyMapTest {

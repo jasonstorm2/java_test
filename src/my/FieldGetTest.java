@@ -8,7 +8,7 @@ import java.lang.reflect.Field;
  * getField 得到 public 修饰的 指定名字的 域对象
  * 
  * 域如果是一个对象，则需要对这个对象的类型进行判断，才能进行相应的逻辑
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class FieldGetTest {

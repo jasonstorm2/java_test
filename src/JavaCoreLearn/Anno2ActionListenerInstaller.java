@@ -13,7 +13,7 @@ import javax.swing.AbstractButton;
  * 通过反射，获取成员变量的对象，（强制转化(AbstractButton)fObj）
  * 
  * 
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class Anno2ActionListenerInstaller {

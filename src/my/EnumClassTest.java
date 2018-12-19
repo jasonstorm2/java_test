@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * 枚举类测试：
  * 通过反射，获得某类的所有枚举。
  * Class对象 getEnumConstants()可以获得该类的所有枚举，然后可以遍历枚举啦。。
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class EnumClassTest {
@@ -35,7 +35,7 @@ public class EnumClassTest {
 
 /**
  * 一个普通类
- * @author Administrator
+ * @author LiZhenhua
  * 枚举的 switch应用
  */
 class aClass{
@@ -59,7 +59,7 @@ class aClass{
 
 /**
  * 一个普通类的继承
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 class bClass extends aClass{
@@ -77,7 +77,7 @@ interface Food {
 }
 /**
  * 一个枚举类
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 enum aEnum {

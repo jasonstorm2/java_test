@@ -3,7 +3,7 @@ package my;
 /**
  * 可变长度的参数测试
  * 方法的参数可以任意长度
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class changingLenthArguments {

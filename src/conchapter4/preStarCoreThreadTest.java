@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
  * 
  * executor.prestartCoreThread()：每次启动一条核心线程，成功返回true，如果核心线程已满，返回false
  * executor.prestartAllCoreThreads()： 启动所有的核心线程，返回启动的核心线程数量
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class preStarCoreThreadTest {

@@ -2,7 +2,7 @@ package JavaCoreLearn;
 
 /**
  * 一个类，在方法上加上自定义的注释
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class AnnoMyTest {

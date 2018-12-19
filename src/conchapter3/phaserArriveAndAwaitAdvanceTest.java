@@ -10,7 +10,7 @@ import java.util.concurrent.Phaser;
  * arriveAndAwaitAdvance()：等到所有线程到达后继续往下运行，当线程数不够时，线程阻塞
  * 与 CountDownLatch的await()方法大体一样。
  * Phaser 具有设置多屏障的功能，类似比赛的赛段。
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class phaserArriveAndAwaitAdvanceTest {

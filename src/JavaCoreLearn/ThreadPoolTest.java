@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * Executors提供四种线程池测试
- * @author Administrator
+ * @author LiZhenhua
  * 
  * public ThreadPoolExecutor(int corePoolSize,  核心线程数，如果运行的线程少于corePoolSize，则创建新线程来执行新任务，即使线程池中的其他线程是空闲的
                           int maximumPoolSize,  最大线程数，可允许创建的线程数，corePoolSize和maximumPoolSize设置的边界自动调整池大小：

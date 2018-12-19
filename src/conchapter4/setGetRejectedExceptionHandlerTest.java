@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
  * 
  * 
  * 
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class setGetRejectedExceptionHandlerTest {
@@ -62,7 +62,7 @@ public class setGetRejectedExceptionHandlerTest {
 	
 	/**
 	 * 自定义被拒绝执行的处理Handler
-	 * @author Administrator
+	 * @author LiZhenhua
 	 *
 	 */
 	class MyRejectedExecutionHandler implements RejectedExecutionHandler{

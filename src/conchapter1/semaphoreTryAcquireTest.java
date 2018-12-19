@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
  * 有参方法tryAcquire(int permits),尝试获得x个许可，无法获得返回false，
  * 有参方法tryAcquire(long timeout,TimeUnit unit),在有限的时间内尝试获得1个许可，无法获得返回false，
  * 有参方法tryAcquire(int permits, long timeout, TimeUnit unit),在有限的时间内尝试获得x个许可，无法获得返回false，
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class semaphoreTryAcquireTest {
@@ -27,7 +27,7 @@ public class semaphoreTryAcquireTest {
 	
 	/**
 	 * tryAcquire 方法
-	 * @author Administrator
+	 * @author LiZhenhua
 	 *
 	 */
 	class Service{

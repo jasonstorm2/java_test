@@ -2,7 +2,7 @@ package my;
 
 /**
  * 判断字符串是能够转换成 int格式
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class ParseIntTest {

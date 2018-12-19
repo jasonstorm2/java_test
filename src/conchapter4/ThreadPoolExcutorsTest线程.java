@@ -30,7 +30,7 @@ import java.util.concurrent.TimeUnit;
  *    不同的队列，各个参数的作用不同
  * 
  * 方法各个参数的作用
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class ThreadPoolExcutorsTest线程 {

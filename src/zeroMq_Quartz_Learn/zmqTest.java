@@ -69,7 +69,7 @@ package zeroMq_Quartz_Learn;
  * 表示该消息将永久保存（除非宕机，ZMQ是不持久化消息的），如果为0表示所有未发送成功的消息在Socker关闭以后都将立即清除，如果是一个正数
  * ，则表示该消息在Socket关闭后多少毫秒内被删除；这个方法非常有用，尤其在控制发送失败时，是否重发消息。
  * 
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class zmqTest {

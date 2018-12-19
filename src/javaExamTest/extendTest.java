@@ -1,7 +1,7 @@
 package javaExamTest;
 /**
  * 继承后，对父类方法的重写
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 class A {

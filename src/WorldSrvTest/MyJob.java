@@ -9,17 +9,17 @@ import org.quartz.JobExecutionException;
 
 
 /**
- * ÈÎÎñµ÷¶È·´ÉäµÄJob
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È·ï¿½ï¿½ï¿½ï¿½Job
  * 
- * ¿ª·¢ÕßÏëÒªjobÍê³ÉÊ²Ã´ÑùµÄ¹¦ÄÜ£¬±ØÐëÇÒÖ»ÄÜÓÉ¿ª·¢Õß×Ô¼º¶¯ÊÖÀ´±àÐ´ÊµÏÖ£¬
- * ±ÈÈçdemoÖÐµÄMyJob£¬ÕâµãÎÞÈÝÖÃÒÉ¡£µ«ÒªÏëÈÃ×Ô¼ºµÄjob±»quartzÊ¶±ð£¬
- * ¾Í±ØÐë°´ÕÕquartzµÄ¹æÔòÀ´°ìÊÂ£¬Õâ¸ö¹æÔò¾ÍÊÇjobÊµÏÖÀà±ØÐëÊµÏÖJob½Ó¿Ú£¬±ÈÈçMyJob¾ÍÊµÏÖÁËJob
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªjobï¿½ï¿½ï¿½Ê²Ã´ï¿½ï¿½ï¿½Ä¹ï¿½ï¿½Ü£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö»ï¿½ï¿½ï¿½É¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´Êµï¿½Ö£ï¿½
+ * ï¿½ï¿½ï¿½ï¿½demoï¿½Ðµï¿½MyJobï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¡ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½jobï¿½ï¿½quartzÊ¶ï¿½ï¿½
+ * ï¿½Í±ï¿½ï¿½ë°´ï¿½ï¿½quartzï¿½Ä¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½jobÊµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½Jobï¿½Ó¿Ú£ï¿½ï¿½ï¿½ï¿½ï¿½MyJobï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½Job
  * 
- * ·¢ÏÖÔÚ·´ÉäµÄÊ±ºò£¬JobµÄÊµÏÖÀàÐèÒª¶¨Òå³ÉPublicµÄ£¬·ñÔò¾ÍÎÞ·¨ÊµÀý»¯£¬ËùÒÔ°ÑÊµÏÖÀàºÍµ÷¶È³ÌÐò·ÅÔÚÍ¬Ò»¸ö.javaÎÄ¼þ¼ÐÏÂÊÇ²»¿ÉÐÐµÄ
+ * ï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Jobï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½Publicï¿½Ä£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ·ï¿½Êµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô°ï¿½Êµï¿½ï¿½ï¿½ï¿½Íµï¿½ï¿½È³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¬Ò»ï¿½ï¿½.javaï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç²ï¿½ï¿½ï¿½ï¿½Ðµï¿½
  * 
- * °ÑJobÊµÏÖÀà·ÅÔÚÒ»¸ö¶ÀÁ¢µÄjavaÎÄ¼þÀï£¬È»ºó°Ñclass¶¨Òå³ÉpublicµÄ£¬È»ºóÎÊÌâ¾Í½â¾öÁË¡£
+ * ï¿½ï¿½JobÊµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½javaï¿½Ä¼ï¿½ï¿½ï£¬È»ï¿½ï¿½ï¿½classï¿½ï¿½ï¿½ï¿½ï¿½publicï¿½Ä£ï¿½È»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í½ï¿½ï¿½ï¿½Ë¡ï¿½
  * 
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class MyJob  implements Job{

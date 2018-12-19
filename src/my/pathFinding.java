@@ -10,7 +10,7 @@ import org.apache.commons.lang3.RandomStringUtils;
 
 /**
  * 用二维数组模拟路径选择
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class pathFinding {

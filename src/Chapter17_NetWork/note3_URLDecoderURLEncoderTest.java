@@ -35,7 +35,7 @@ import java.net.URLEncoder;
  * utf-8字符集中，每个中文占 三个字节（1字节=8位，4位可以用1个十六进制表示），每个字节可以转换才两个十六进制的数字，如：%E4%BD%A0
  * 不同字符集，中文所占字节数不一样
  * 
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class note3_URLDecoderURLEncoderTest {

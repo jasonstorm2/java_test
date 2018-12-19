@@ -7,7 +7,7 @@ package my;
  * 覆盖的方法 如果调用 super()方法，则会先调用父类被覆盖的方法
  * 
  * super() 调用父类的方法
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class FatherChildOverrideTest extends fatherClass1{

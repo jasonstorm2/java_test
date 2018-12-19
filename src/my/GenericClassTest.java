@@ -14,7 +14,7 @@ import java.util.List;
  * 所以，在静态方法，静态变量，静态初始化块中，不允许有类型参数
  * 
  * 由于系统并不会真的产生泛型类，所以 用 instanceof 来判断 泛型类是错的
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class GenericClassTest {
@@ -73,7 +73,7 @@ public class GenericClassTest {
 /**
  * 自定义的泛型类---在定义接口，类时声明类型参数，类型参数在整个接口，类体内可以当成类型使用K（类型有很多种，如String，Integer）
  * 几乎所有可使用 普通类型 的地方都可以使用这种 类型参数
- * @author Administrator
+ * @author LiZhenhua
  *
  * @param <K>
  */
@@ -114,7 +114,7 @@ class myG<T extends Object>{
 }
 /**
  * 设置多个上限：至多一个父类上限，可以有多个接口上限，且 类上限必须在第一个位置
- * @author Administrator
+ * @author LiZhenhua
  *
  * @param <T>
  */
@@ -129,7 +129,7 @@ class myGe<T extends Object & Serializable>{
  * 从泛型类派生的子类  被派生的类或接口不能带类型参数
  * class mg extends myGeneric<K>是错的，必须带入实际的类型，跟使用方法类似class mg extends myGeneric<String>
  * 或者class mg extends myGeneric 也是正确的，可以不用传入实际的类型参数
- * @author Administrator
+ * @author LiZhenhua
  *
  * 泛型派生后的类 已经不是泛型了
  */
@@ -164,7 +164,7 @@ class mg extends myGeneric<String>{
 
 /**
  * 泛型派生后的类 已经不是泛型了
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 class mg2 extends myGeneric{
@@ -209,7 +209,7 @@ class Rectangle extends Shape{
 
 /**
  * 限制的泛型通配符 的意义，为何要限制？(此外，也可以在定义类型参数是设置上限)
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 class Canvas{

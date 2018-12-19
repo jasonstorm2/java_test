@@ -10,7 +10,7 @@ import java.util.concurrent.Semaphore;
  * 本例使用的方法有：Semaphore的acquire(int permits)，release(int permits)，availablePermits()，drainPermits()
  * 
  * 此类证明Semaphore(int permits)只是定义了初始的许可数量为int permits个，可以通过acquire较少和release增加
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class semaphoreTest3 {

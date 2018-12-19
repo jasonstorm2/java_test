@@ -29,8 +29,8 @@ public class oddNumberTest {
 	
 	public static void lll(){
 //		 int mid = (1 >>> 1) & ~1; // force midpoint to be even
-		int mid = 1>>>1;
-		System.out.println("1 >>> 1╡Бйтё╨нч╥Ш╨есррфё╛©ун╩рт0╡╧фК"+mid);
+		int mid = 4>>>1;
+		System.out.println("1 >>> 1╡Бйтё╨нч╥Ш╨есррфё╛©ун╩рт0╡╧фК:"+mid);
 	}
 
 }

@@ -1,7 +1,7 @@
 package javaExamTest;
 /**
  * 匿名内部类的实例化！！
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class Outer {

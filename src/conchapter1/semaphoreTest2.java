@@ -7,7 +7,7 @@ import java.util.concurrent.Semaphore;
  * 此类是用来限制线程并发的数量的
  * 本例使用的类有:Semaphore
  * 本例使用的方法有：Semaphore的acquire(int permits)，release(int permits)
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class semaphoreTest2 {
@@ -29,7 +29,7 @@ public class semaphoreTest2 {
 	 * acquire(int permits) 每次调用此方法，就使用permits个许可，即减掉permits个许可
 	 * 本例有10个许可，每次调用-2个，所以只能调动5次
 	 * 
-	 * @author Administrator
+	 * @author LiZhenhua
 	 *
 	 */
 	class Service{

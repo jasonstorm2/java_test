@@ -2,7 +2,7 @@ package my;
 
 /**
  * 如果自定义了构造器，那么不能再使用默认的构造器了。必须再自定义默认构造器
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class ConstructorDefaultTest {

@@ -10,7 +10,7 @@ import java.util.concurrent.TimeoutException;
  *  Phaser.forceTermination():使phaser对象的屏蔽功能失效，失效后，线程继续往下运行
  *  与CyclicBarrier的 reset()方法相比，reset执行时出现异常
  *  Phaser.isTerminated()：判断是否被强制失效
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class phaserForceTerminationTest {

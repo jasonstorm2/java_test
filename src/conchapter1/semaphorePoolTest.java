@@ -14,7 +14,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * Semaphore信号量的控制，代码块的许可有几个，控制线程数量
  * ReentrantLock 同步锁，高并发下加此锁一次只能一个线程在处理，等到释放后等待的线程才能处理代码块
  * Condition 控制线程的等待和唤醒，若某线程获得锁，却陷入等待状态condition.await()，则其他线程可以把它的锁抢过来
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class semaphorePoolTest {
@@ -44,7 +44,7 @@ public class semaphorePoolTest {
 	 * 同一个时间只能有permits个线程同时执行acquire() 和 release()之间的代码
 	 * 如果permits>1并不能保证线程安全，可能有脏数据
 	 * 
-	 * @author Administrator
+	 * @author LiZhenhua
 	 *
 	 */
 	class ListPool{

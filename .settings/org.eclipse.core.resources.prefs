@@ -7,5 +7,7 @@ encoding//src/WorldSrvTest=UTF-8
 encoding//src/my/FileAddressTest.java=GBK
 encoding//src/my/JsonStringTest.java=UTF-8
 encoding//src/my/XMLTest.java=UTF-8
+encoding//src/nettyLearn/MyNettyServer1.java=UTF-8
+encoding//src/nettyLearn/MyNettyServerHandler1.java=UTF-8
 encoding/<project>=GBK
 encoding/log4j.properties=UTF-8

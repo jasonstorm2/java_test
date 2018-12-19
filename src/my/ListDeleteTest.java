@@ -20,7 +20,7 @@ import java.util.List;
  * ²Î¿¼ÍøÖ·£º	http://www.itnose.net/detail/6214432.html
  *     			http://swiftlet.net/archives/743
  * 
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class ListDeleteTest {

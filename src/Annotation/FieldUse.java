@@ -8,7 +8,7 @@ import java.lang.annotation.Target;
 
 /**
  * 
- * @author Administrator
+ * @author LiZhenhua
  * 自定义的一个annotation注释，
  * 前面三个使用的是系统的注释。
  * 第一个说明，生成的注释会在javadoc文档上

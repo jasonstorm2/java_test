@@ -8,7 +8,7 @@ import java.util.Enumeration;
  * 获得系统的类加载器 ClassLoader.getSystemClassLoader() 
  * 系统类加载器 的加载路径--通常由CLASSPATH 环境变量 指定，
  * 如果，操作系统 没有指定CLASSPATH环境变量， 则 默认以当前路径作为 系统类加载器 的家在路径
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class ClassLoaderPropTest {

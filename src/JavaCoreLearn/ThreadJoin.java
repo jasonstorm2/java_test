@@ -1,7 +1,7 @@
 package JavaCoreLearn;
 /**
  * 线程加入
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class ThreadJoin extends Thread{

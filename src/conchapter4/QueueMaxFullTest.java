@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
  * ArrayBlockingQueue
  * SynchronousQueue
  * 
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class QueueMaxFullTest {

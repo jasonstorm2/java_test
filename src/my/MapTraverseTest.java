@@ -6,16 +6,16 @@ import java.util.Map;
 
 /**
  * Map±éÀú²âÊÔ
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class MapTraverseTest {
 	public static void main(String[] args) {
 		Map<String, String> map = new HashMap<String, String>();
-		map.put("1", "one");
-		map.put("two", "two");
-		map.put("3", "three");
-		map.put("4", "four");
+//		map.put("1", "one");
+//		map.put("two", "two");
+//		map.put("3", "three");
+//		map.put("4", "four");
 		// 1.
 		for (String key : map.keySet()) {
 			System.out.println("key= " + key + " and value= " + map.get(key));

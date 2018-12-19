@@ -27,7 +27,7 @@ import java.util.Date;
 ●LocalDateTime——它包含了日期及时间，不过还是没有偏移信息或者说时区。
 
 ●ZonedDateTime——这是一个包含时区的完整的日期时间，偏移量是以UTC/格林威治时间为基准的
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class TimeCompareTest {

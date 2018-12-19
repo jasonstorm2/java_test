@@ -19,7 +19,7 @@ package JavaCoreLearn;
   内部类和静态嵌套类的差异：
   内部类不能声明静态的成员变量和静态方法，而静态嵌套类可以
   内部类持有外围类的引用，而静态嵌套类没有
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class StaticInnerClassTest {

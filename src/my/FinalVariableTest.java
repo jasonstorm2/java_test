@@ -5,7 +5,7 @@ package my;
  * final的变量赋值后无法改变
  * final的变量在初始化时必须赋值，或者在声明时赋值
  * 
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class FinalVariableTest {

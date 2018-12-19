@@ -8,7 +8,7 @@ import java.util.concurrent.Semaphore;
  * 多进路-多处理-多出路试验
  * 
  * 开启多个线程，运行的代码模块只有3个许可的情况，非同步
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class semaphoreMoreTest {
@@ -29,7 +29,7 @@ public class semaphoreMoreTest {
 	 * 同一个时间只能有permits个线程同时执行acquire() 和 release()之间的代码
 	 * 如果permits>1并不能保证线程安全，可能有脏数据
 	 * 
-	 * @author Administrator
+	 * @author LiZhenhua
 	 *
 	 */
 	class Service{

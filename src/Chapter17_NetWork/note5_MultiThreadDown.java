@@ -2,7 +2,7 @@ package Chapter17_NetWork;
 
 /**
  * 多线程下载测试
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class note5_MultiThreadDown {

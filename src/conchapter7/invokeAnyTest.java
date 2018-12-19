@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
  * 
  * 如果其他线程有Thread.currentThread().isInterrupted()判断，并throw new Exception(),虽然抛出了异常，但main线程中并不能捕获异常，
  * 必须在callable中使用try-catch显式捕获,才能在控制台打印出异常信息
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class invokeAnyTest {
@@ -105,7 +105,7 @@ public class invokeAnyTest {
 	
 	/**
 	 * 没有线程中断处理，正常结束
-	 * @author Administrator
+	 * @author LiZhenhua
 	 *
 	 */
 	class Callable1 implements Callable<String>{
@@ -135,7 +135,7 @@ public class invokeAnyTest {
 	 * 
 	 * 并用trycatch进行捕获
 	 * 
-	 * @author Administrator
+	 * @author LiZhenhua
 	 *
 	 */
 	class Callable2 implements Callable<String>{
@@ -178,7 +178,7 @@ public class invokeAnyTest {
 	 * 
 	 * 无trycatch进行捕获
 	 * 
-	 * @author Administrator
+	 * @author LiZhenhua
 	 *
 	 */
 	class Callable3 implements Callable<String> {
@@ -210,7 +210,7 @@ public class invokeAnyTest {
 	
 	/**
 	 * 主动抛出异常，无trycatch处理
-	 * @author Administrator
+	 * @author LiZhenhua
 	 *
 	 */
 	class Callable4 implements Callable<String> {
@@ -243,7 +243,7 @@ public class invokeAnyTest {
 	 * 
 	 * 没有再抛出异常，导致main线程认为本线程是正确的，获取的是本线程的返回
 	 * 
-	 * @author Administrator
+	 * @author LiZhenhua
 	 *
 	 */
 	class Callable5 implements Callable<String> {
@@ -277,7 +277,7 @@ public class invokeAnyTest {
 	
 	/**
 	 * 无主动抛出异常，有中断处理
-	 * @author Administrator
+	 * @author LiZhenhua
 	 *
 	 */
 	class Callable6 implements Callable<String>{

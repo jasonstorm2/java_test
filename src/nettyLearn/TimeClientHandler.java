@@ -192,7 +192,7 @@ class TimeDecoder2 extends ReplayingDecoder<Void> {
 /************用POJO代替ByteBuf--开始*************/
 /**
  * 解码器，缓存足够的数据，按特定的数据类型解码
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 class POJODecoder extends ByteToMessageDecoder{

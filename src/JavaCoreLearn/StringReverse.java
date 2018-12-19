@@ -2,7 +2,7 @@ package JavaCoreLearn;
 
 /**
  * 介绍五个反转字符串的方法
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class StringReverse {

@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
  *     isShutDown()：判断线程池是否被关闭
  *     isTerminating 和 isTerminated方法：是否正在中断，是否已经中断
  *     awaitTermination(long timeout, TimeUnit unit)：等待线程池关闭完毕
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class ThreadPoolShutdownTest {

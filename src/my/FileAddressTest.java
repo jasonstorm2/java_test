@@ -8,7 +8,7 @@ import Chapter15.FileTest;
 
 /**
  * 相对地址，即跟地址是：System.getProperty("user.dir")，即项目的地址，此项目地址是：D:\WorkSpace1\Java_Test
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class FileAddressTest {

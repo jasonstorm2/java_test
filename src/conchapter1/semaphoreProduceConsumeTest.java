@@ -11,7 +11,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * Condition setCondition = lock.newCondition() 条件 控制线程的状态，有等待，和唤醒所有线程等功能
  * volatile 的用法
  * 
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class semaphoreProduceConsumeTest {

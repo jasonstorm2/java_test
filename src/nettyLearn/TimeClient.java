@@ -13,7 +13,7 @@ import io.netty.channel.socket.nio.NioSocketChannel;
 
 /**
  * 在Netty中,编写服务端和客户端最大的并且唯一不同的使用了不同的BootStrap和Channel的实现
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class TimeClient {

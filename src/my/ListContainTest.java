@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  * ListµÄ contain ·½·¨²âÊÔ
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class ListContainTest {

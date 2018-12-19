@@ -4,7 +4,7 @@ package javaTest;
 /**
  * 可变数量形参的测试，...
  * 对象传入方法，方法是否修改了对象的值？
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class MyClassTest {

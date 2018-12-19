@@ -9,7 +9,7 @@ import java.util.Map;
  * 已检查异常： 除未检查异常外的异常
  * 
  * 一个方法必须声明所有可能抛出的已检查异常，而未检查异常要吗不可控制(ERROR)，要么就应该避免发生(RuntimeException)
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class ThreadExceptionTest {

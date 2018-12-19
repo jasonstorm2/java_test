@@ -3,7 +3,7 @@ package JavaCoreLearn;
 
 /**
  * Ò»¸ö·ºÐÍbean
- * @author Administrator
+ * @author LiZhenhua
  *
  * @param <T>
  * @param <U>

@@ -4,7 +4,7 @@ import java.util.Random;
 
 /**
  * Random().nextBoolean()方法，返回的是一个伪随机布尔值
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class RandomBoolean {

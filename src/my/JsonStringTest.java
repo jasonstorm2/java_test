@@ -18,7 +18,7 @@ import com.alibaba.fastjson.JSONObject;
  * list map jsonobje 打印出来的效果
  * 
  * 测试jsonobject 放入数组int[] 打印的效果是怎么样的
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class JsonStringTest {

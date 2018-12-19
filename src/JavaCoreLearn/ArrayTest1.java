@@ -6,7 +6,7 @@ import java.lang.reflect.Array;
  * Array对象可以代表所有的数组
  * 
  * 动态创建并操作 数组
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class ArrayTest1 {

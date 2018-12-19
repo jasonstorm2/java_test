@@ -67,7 +67,7 @@ import java.io.Serializable;
 　　这样做的前提是对象以及对象内部所有引用到的对象都是可串行化的，否则，就需要仔细考察那些不可串行化的对象可否设成transient，从而将其排除在复制过程之外。
 
 　　注意Cloneable与Serializable接口都是marker Interface，也就是说它们只是标识接口，没有定义任何方法
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class CloneTest {
@@ -473,7 +473,7 @@ class Student4 implements Cloneable
 
 /**
  * 不用重写clone方法，写一个新的方法deepClone()就可以
- * @author Administrator
+ * @author LiZhenhua
  * 
  * serialVersionUID问题
 　　当一个类实现了Serializable接口时，表明该类可被序列化，这个时候Eclipse会给出一个警告，要求你为该类定义一个字段，该字段名字为serialVersionUID，类型为long，提示信息如下：

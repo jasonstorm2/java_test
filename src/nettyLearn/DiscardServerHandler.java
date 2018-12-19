@@ -15,7 +15,7 @@ import io.netty.util.ReferenceCountUtil;
  * ChannelHandlerAdapter是ChannelHandler的实现类 Handles a server-side channel
  * ChannelHandler 提供了你可以override的多个事件处理方法
  * 到目前，你只需要继承ChannelInboundHandlerAdapter方法，而不是自己去实现他的父类接口
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class DiscardServerHandler extends ChannelInboundHandlerAdapter {
@@ -181,11 +181,11 @@ public class DiscardServerHandler extends ChannelInboundHandlerAdapter {
 //在这几行代码里还有几个重要的事情。
 //第一， 通过ChannelPromise，当编码后的数据被写到了通道上Netty可以通过这个对象标记是成功还是失败。
 //第二， 我们不需要调用cxt.flush()。
-//因为处理器已经单独分离出了一个方法void flush(ChannelHandlerContext cxt),如果像自己实现flush方法内容可以自行覆盖这个方法。
+//因为处理器已经单独分离出了一个方法void flush(ChannelHandlerContext cxt),如果想自己实现flush方法内容可以自行覆盖这个方法。
 //剩下的最后一个任务是在TimeServerHandler之前将一个时间编码器插入服务器端的ChannelPipeline，这是一个简单的练习。
 /**
 * 服务端发给客户端的消息编码
-* @author Administrator
+* @author LiZhenhua
 *
 */
 class POJOEncoder extends ChannelOutboundHandlerAdapter  {

@@ -34,7 +34,7 @@ import java.util.concurrent.TimeoutException;
  * 
  * Future.get(long timeout, TimeUnit unit) 
  * 
- * @author Administrator
+ * @author LiZhenhua
  */
 public class CallableFutureTest {
 	

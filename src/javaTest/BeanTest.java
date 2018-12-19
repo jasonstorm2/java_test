@@ -18,7 +18,7 @@ import my.JavaBean;
  * 内省(Introspector) 是Java 语言对 JavaBean 类属性、事件的一种缺省处理方法。
  * Java JDK中提供了一套 API 用来访问某个属性的 getter/setter 方法，这就是内省。
  * 这些API存放于包java.beans 中。
- * @author Administrator
+ * @author LiZhenhua
  * 
  * 一般的做法是通过类Introspector的getBeanInfo方法获取某个对象的BeanInfo 信息,
  * 然后通过BeanInfo来获取属性的描述器(PropertyDescriptor),

@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit;
  *    2.ThreadPoolExecutorµ÷ÓÃsetThreadFactory(threadFactory);
  * 
  * 
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class threadFactoryExecuteUncaughtExceptionHandlerTest {

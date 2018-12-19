@@ -13,7 +13,7 @@ import java.util.concurrent.ThreadPoolExecutor;
  * submit提交线程报错才能返回？
  * execute提交的会出错？
  * 
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class RejectedExecutionHandlerTest {

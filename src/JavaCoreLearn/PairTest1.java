@@ -5,7 +5,7 @@ package JavaCoreLearn;
  * 
  * String1.compareTo(String2) > 0 说明String1比String2大
  * 
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class PairTest1 {

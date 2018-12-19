@@ -8,7 +8,7 @@ import java.util.concurrent.Phaser;
  * Phaser类有重置功能，当parties数量达到最大值后，重置。
  * 
  * 
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class phaserArriveTest {

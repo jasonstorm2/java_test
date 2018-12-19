@@ -19,7 +19,7 @@ import java.util.concurrent.ConcurrentLinkedQueue;
  * 
  * LinkedList 弹出 压入测试 pop and push子弹夹
  * linkList.pollLast()，从底部拉出数据，直到null
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class ListPopTest {

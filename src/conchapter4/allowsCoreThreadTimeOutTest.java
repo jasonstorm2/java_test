@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
  * ThreadPoolExecutor.allowCoreThreadTimeOut(boolean value)：可以设置是否杀死空闲的核心线程
  * 
  * 不管线程的队列是new LinkedBlockingQueue<Runnable>() 还是 new SynchronousQueue<Runnable>()
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class allowsCoreThreadTimeOutTest {

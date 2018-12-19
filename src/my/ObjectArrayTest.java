@@ -2,7 +2,7 @@ package my;
 
 /**
  * object[] 数组测试，可以随便放入任何类型的数据
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class ObjectArrayTest {

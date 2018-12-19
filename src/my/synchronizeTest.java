@@ -2,7 +2,7 @@ package my;
 
 /**
  * 静态方法的锁是指 jvm加载该类产生的Class的对应的锁，即synchronizeTest.class的锁
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class synchronizeTest extends Thread {

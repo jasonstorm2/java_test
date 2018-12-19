@@ -17,7 +17,7 @@ import java.util.concurrent.TimeUnit;
  * accept方法也有两个，一个会阻塞线程，一个不会
  * 
  *  Future 对象的通用类型是实际操作的结果。比如，读取或写入操作会因为操作返回读或写的字节数，而返回一个 Future<Integer>。
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class SimpleAIOServer {

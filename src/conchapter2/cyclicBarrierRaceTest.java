@@ -6,7 +6,7 @@ import java.util.concurrent.CyclicBarrier;
 
 /**
  * CountDownLatch类的使用
- * @author Administrator
+ * @author LiZhenhua
  * 
  * 
  * 多个线程 通过同时操作相同的多个CountDownLatch对象，来模拟一场跑步比赛

@@ -11,7 +11,7 @@ import java.util.concurrent.Phaser;
  * Phaser.awaitAdvanceInterruptibly(int phase)：和awaitAdvance()类似，只是等待时，phaser可以被中断，中断则报线程中断异常
  * 
  * 
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class phaserAwaitAdvanceTest {

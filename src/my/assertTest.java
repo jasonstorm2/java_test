@@ -24,7 +24,7 @@ package my;
  * 如果表达式为false，则断言失败，则会抛出一个AssertionError对象。这个AssertionError继承于Error对象，
  * 而Error继承于Throwable，Error是和Exception并列的一个错误对象，通常用于表达系统级运行错误。
  * 
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class assertTest {

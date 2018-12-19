@@ -20,7 +20,7 @@ import java.util.concurrent.CyclicBarrier;
  * 
  * 
  * 
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class cyclicBarrierTest {

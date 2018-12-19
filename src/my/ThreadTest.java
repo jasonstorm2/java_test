@@ -15,33 +15,48 @@ public class ThreadTest extends Thread{
 	public void run(){
 		while(true){
 			System.out.println("Thread"+threadNumber+"("+countDown+")");
-			if(--countDown==0){
-				return;
-			}
+//			if(--countDown==0){
+//				return;
+//			}
 		}
 	}
 	
 	public static void main(String[] args){
 //		System.out.println("路径："+Thread.currentThread().getContextClassLoader().getClass().getPackage());
 //		
-//		for(int i = 0; i<5;i++){
-//			new ThreadTest().start();
+		for(int i = 0; i<5;i++){
+			new ThreadTest().start();
 //			System.out.println("ALL THREADS STARTED");
-//		}
+		}
 		
-		getThreadStace();
+//		getThreadStace();
 	}
 	
+	/**
+	 * 打印 当前线程所在的位置。
+	 */
 	public static void ThreadStace(){
-		StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
-		int i=0;
-		for (StackTraceElement ss : stackTrace) {
-			System.out.println("i的值："+i);
-			System.out.println(ss.getClassName()+""+ss.getFileName()+""+ss.getLineNumber()+""+ss.getMethodName());	
-			i++;
-			
-		}
-		System.out.println(stackTrace[2]);		
+//		StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
+//		int i=0;
+//		for (StackTraceElement ss : stackTrace) {
+//			System.out.println("i的值："+i);
+//			System.out.println(ss.getClassName()+" "+ss.getFileName()+" "+ss.getLineNumber()+" "+ss.getMethodName());	
+//			i++;
+//			
+//		}
+//		System.out.println(stackTrace[2]);		
+		
+		String str = "";
+		StackTraceElement[] stackElements = Thread.currentThread().getStackTrace();
+        if (stackElements != null) {            
+            for (int i = 0; i < stackElements.length; i++) {
+            	str = str + "\n	at " + stackElements[i].getClassName();
+            	str = str + "." + stackElements[i].getMethodName();
+            	str = str + "(" + stackElements[i].getFileName();
+            	str = str + ":" + stackElements[i].getLineNumber()+")";
+            }
+        }
+        System.out.println(str);
 	}
 	
 	

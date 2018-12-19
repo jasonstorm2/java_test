@@ -28,7 +28,7 @@ import java.util.Arrays;
  *  Class.forName(相对路径) 获取具体的内部类，用$表示内部类
  *  获取包名，获取父类Class.
  *  内部类获取所在类的Class--即父类的class对象
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 @Repeatable(Annos.class)

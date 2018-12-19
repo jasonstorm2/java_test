@@ -15,7 +15,7 @@ import java.util.concurrent.TimeoutException;
  * 若有某一个线程遇到异常报错退出，其他线程继续等待
  * 若有某一个线程中途中断interrupt(),其他线程都退出
  * 若有某一个线程中抛出异常,其他线程都退出
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class cyclicBarrierIsBrokenTest {

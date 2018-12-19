@@ -3,7 +3,7 @@ package my;
 /**
  * 测试main线程是否是最后一个退出的线程
  * 
- * @author Administrator
+ * @author LiZhenhua
  * 
  *         JVM会在所有的非守护线程（用户线程）执行完毕后退出； 
  *         main线程是用户线程；

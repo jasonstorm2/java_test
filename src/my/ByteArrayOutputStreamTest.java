@@ -11,7 +11,7 @@ import java.io.IOException;
  * 
  * 另一种方式，指定大小n字节的缓冲区：OutputStream bOut = new ByteArrayOutputStream(int n)
  * 
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class ByteArrayOutputStreamTest {

@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * CountDownLatch类的使用
- * @author Administrator
+ * @author LiZhenhua
  * 
  * CountDownLatch.await(3,TimeUnit.SECONDS); 使调用CountDownLatch对象的线程等待指定的时间后，继续进行
  * CountDownLatch.getCount() 获取当前计数值

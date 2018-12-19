@@ -11,7 +11,7 @@ import java.util.concurrent.TimeoutException;
  *  若指定栏位非当前栏位，超出当前栏位，或小于当前栏位，该方法不会报出异常，线程直接往下运行
  *  awaitAdvanceInterruptibly 若在中途等待的过程中线程被中断，将会抛出线程中断异常
  * 
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class phaserAwaitAdvanceInterruptiblyTest {

@@ -8,7 +8,7 @@ import java.lang.annotation.Target;
 
 /**
  * 自定义一个 annotation注释
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 @Target(ElementType.FIELD)

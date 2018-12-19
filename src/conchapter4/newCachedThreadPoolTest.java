@@ -20,7 +20,7 @@ import java.util.concurrent.ThreadFactory;
  *  
  *  Executor调用用方法：Executor.execute(Runnable command)来运行一条新的线程
  *  
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class newCachedThreadPoolTest {

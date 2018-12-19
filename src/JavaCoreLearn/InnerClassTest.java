@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 import javax.swing.Timer;
 /**
  * 一个java源文件里可以有多个class，但只能由一个是public
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class InnerClassTest {

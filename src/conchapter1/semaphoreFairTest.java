@@ -12,7 +12,7 @@ import java.util.concurrent.Semaphore;
  * fair false时线程启动顺序与获取许可执行代码块顺序不一致
  * 
  * 
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class semaphoreFairTest {
@@ -31,7 +31,7 @@ public class semaphoreFairTest {
 	/**
 	 * Semaphore(int permits, boolean fair)
 	 * fair 的两种状态导致的结果
-	 * @author Administrator
+	 * @author LiZhenhua
 	 *
 	 */
 	class Service{

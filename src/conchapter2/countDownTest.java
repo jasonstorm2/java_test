@@ -19,7 +19,7 @@ import java.util.concurrent.CountDownLatch;
  * CountDownLatch.getCount()    ：获取当前计数
  * 
  * 一个线程主动调用等待方法await()，等其他的线程countDown()计数，直到为0 时，等待的线程将继续运行
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class countDownTest {
@@ -42,7 +42,7 @@ public class countDownTest {
 	/**
 	 * getQueueLength() 获取等待许可的线程数量
 	 * hasQueuedThreads() 判断是否有线程在等待
-	 * @author Administrator
+	 * @author LiZhenhua
 	 *
 	 */
 	class Service{

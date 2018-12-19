@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  * ArrayList 空和empty的比较
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class ListNullAndEmpty {

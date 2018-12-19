@@ -33,7 +33,7 @@ import java.util.List;
  *  
  *  同样客户端也是如此，需要另开一个线程
  * 
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class note7_SocketServer {

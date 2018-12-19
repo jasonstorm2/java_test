@@ -2,7 +2,7 @@ package my;
 
 /**
  * 接口 和 继承 对象类型的判断instanceof
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 interface A{}

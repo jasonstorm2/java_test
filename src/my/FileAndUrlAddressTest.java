@@ -30,7 +30,7 @@ import java.net.URL;
  * 
  * 绝对不要使用硬编码的绝对路径。因为，我们完全可以使用ClassLoader类的getResource("")方法得到当前classpath的绝对路径。
  * 
- * @author Administrator 
+ * @author LiZhenhua 
  * 		   URL的一般格式为：
  * 
  *         scheme://host:port/path?query#fragment

@@ -31,7 +31,7 @@ import java.net.UnknownHostException;
  * getHostAddress()：获取该InetAddress对象的对应第IP地址，字符串
  * getLocal.getHostName():获取该InetAddress对象的主机名
  * isReachable(2000)：测试是否可以到达该地址
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class note2_InetAddressTest {

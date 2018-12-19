@@ -37,7 +37,7 @@ import com.alibaba.fastjson.TypeReference;
  * FastJson在复杂类型的Bean转换Json上会出现一些问题，可能会出现引用的类型，导致Json转换出错，需要制定引用。
  * FastJson采用独创的算法，将parse的速度提升到极致，超过所有json库。
  * 
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class JSONToBeanTest {

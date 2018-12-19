@@ -2,7 +2,7 @@ package my;
 
 /**
  * 其他类，访问某类的静态嵌套类
- * @author Administrator
+ * @author LiZhenhua
  *
  */
 public class OuterClass2 {
