@@ -37,7 +37,6 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
-import org.apache.logging.log4j.message.ParameterizedMessage;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -306,7 +305,8 @@ public class Utils {
 	 * @return
 	 */
 	public static String createStr(String str, Object...params) {
-		return ParameterizedMessage.format(str, params);
+		return "";
+//		return ParameterizedMessage.format(str, params);
 	}
 
 	public static void intToBytes(byte[] b,int offset,int v) {

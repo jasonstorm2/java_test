@@ -12,6 +12,8 @@ import io.netty.handler.timeout.IdleStateHandler;
 
 import java.util.concurrent.TimeUnit;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 /**
  * netty 不只可以处理 nio类型的数据，也可以处理oio等类型的数据
  * nio是目前使用最多的传输类型，transport 
@@ -19,7 +21,12 @@ import java.util.concurrent.TimeUnit;
  *
  */
 public class MyNettyServer1 {
+	
     private int port;
+    
+    private  Logger logInfo = LogManager.getLogger("myInfo");
+    private  Logger logWarn = LogManager.getLogger("myWarn");
+    private  Logger loggerANY = LogManager.getLogger("ANY");
 
     public MyNettyServer1(int port) {
         super();
@@ -42,6 +49,21 @@ public class MyNettyServer1 {
         EventLoopGroup bossGroup = new NioEventLoopGroup();
         EventLoopGroup workerGroup = new NioEventLoopGroup();
         System.out.println("准备运行端口：" + port);
+        logInfo.info("項目開始運行。。。。。。。。。。");
+        logInfo.warn("項目開始運行warn。。。。。。。。。。");
+        
+        
+        logWarn.info("this is a info message by logger2");
+        logWarn.warn("this is a warn message by logger2");
+        loggerANY.info("this is a info message by loggerANY");
+        loggerANY.warn("this is a warn message by loggerANY");
+        
+        logInfo.error("logInfo.error");
+        logWarn.error("logWarn.error");
+        loggerANY.error("loggerANY.error");
+        
+        
+        
         try {
             ServerBootstrap b = new ServerBootstrap();   
             b = b.group(bossGroup, workerGroup);
@@ -76,6 +98,8 @@ public class MyNettyServer1 {
     
     //将规则跑起来
     public static void main(String[] args) throws Exception {
+    	//设置日志路径
+    	System.setProperty("logPath", "log");
         int port;
         if (args.length > 0) {
             port = Integer.parseInt(args[0]);

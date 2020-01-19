@@ -1,7 +1,7 @@
 import java.util.HashMap;
 
-import myl.earth;
-import myl.moon;
+//import myl.earth;
+//import myl.moon;
 
 
 
@@ -72,10 +72,10 @@ public class ClassDemo
         show2.aa();
         AFather sh = new AFather();
         sh.aa();
-        
-        moon ww = new moon();
-        earth.descripe("导入的包只能在默认的包中使用吗？？？？");
-        
+//        
+//        moon ww = new moon();
+//        earth.descripe("导入的包只能在默认的包中使用吗？？？？");
+//        
     }
     void show(String name)
     {
