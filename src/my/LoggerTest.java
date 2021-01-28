@@ -5,7 +5,7 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.message.ParameterizedMessage;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.LoggerFactory;
 
 /**
  * apache log4j的使用
@@ -107,13 +107,13 @@ public class LoggerTest {
 		utils.utils.PrintLine("构造函数里org.apache.logging.log4j.Logger类的日志");
 		LoggerTest logt= new LoggerTest();		
 		utils.utils.PrintLine("org.slf4j.Logger类的日志");
-		org.slf4j.Logger  logger2 =  LoggerFactory.getLogger("CORE");
+//		org.slf4j.Logger  logger2 =  LoggerFactory.getLogger("CORE");
 		String d = "******";
-		logger2.error("error");
-		logger2.warn("warn");		
-		logger2.info("info{}",d);
-		logger2.debug("debug");
-		logger2.trace("trace");
+//		logger2.error("error");
+//		logger2.warn("warn");		
+//		logger2.info("info{}",d);
+//		logger2.debug("debug");
+//		logger2.trace("trace");
 		
 		/********************************/
 		utils.utils.PrintLine("log4j的字符串组装方法");
