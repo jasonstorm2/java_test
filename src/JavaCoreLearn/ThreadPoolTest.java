@@ -255,7 +255,6 @@ public class ThreadPoolTest {
 				System.out.println("time:" + System.currentTimeMillis());// add
 				i++;
 				if(i==10){
-					this.				
 				}
 			}
 		}, 2000, 40);
