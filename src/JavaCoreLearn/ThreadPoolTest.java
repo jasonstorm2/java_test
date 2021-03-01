@@ -3,6 +3,8 @@ package JavaCoreLearn;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CompletionService;
 import java.util.concurrent.ExecutionException;
@@ -11,6 +13,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
@@ -38,12 +41,14 @@ import java.util.concurrent.TimeUnit;
  */
 public class ThreadPoolTest {
 	public static void main(String[] args) throws Exception {
-		ThreadPoolTest.submitTest();
+//		ThreadPoolTest.submitTest();
 //		ThreadPoolTest.excutorFixedThreadPool1();
 //		ThreadPoolTest.excutorFixedThreadPool2();	
+//		ThreadPoolTest.excutorScheduledThreadPool3();
 //		ThreadPoolTest.excutorSingleThreadExecutor();
 //		ThreadPoolTest.excutorScheduledThreadPool2();
 //		ThreadPoolTest.CompletionServiceTest();
+		ThreadPoolTest.timerTest();
 	}
 	
 	/**
@@ -182,7 +187,18 @@ public class ThreadPoolTest {
 		    	 System.out.println("线程名字："+Thread.currentThread().getName());		
 		        System.out.println("模拟心跳机制");
 		    }
-		}, 1, 1, TimeUnit.SECONDS);
+		}, 1, 1, TimeUnit.SECONDS);	
+	}
+	
+	private static void excutorScheduledThreadPool3(){
+		ScheduledThreadPoolExecutor  scheduled = new ScheduledThreadPoolExecutor(2);
+        scheduled.scheduleAtFixedRate(new Runnable() {
+            @Override
+            public void run() {
+            	System.out.println("time:"+System.currentTimeMillis());
+            }
+        }, 0, 40, TimeUnit.MILLISECONDS);//0表示首次执行任务的延迟时间，40表示每次执行任务的间隔时间，TimeUnit.MILLISECONDS执行的时间间隔数值单位
+
 	}
 	
 	/**
@@ -227,6 +243,22 @@ public class ThreadPoolTest {
 		System.out.println(completionService.take().get()); // 获取执行结果
 		executor.shutdown();
 
+	}
+	
+	public static void timerTest() {
+		Timer timer = new Timer();
+		
+		timer.schedule(new TimerTask() {
+			@Override
+			public void run() {
+				int i=0;
+				System.out.println("time:" + System.currentTimeMillis());// add
+				i++;
+				if(i==10){
+					this.				
+				}
+			}
+		}, 2000, 40);
 	}
 
 }
