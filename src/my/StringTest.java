@@ -58,7 +58,7 @@ public class StringTest {
 			
 		}else if(array instanceof int[]){
 			int[] arr = (int[])array;
-			int str = (int)value;
+			int str = (Integer) value;
 			for(int i=0;i<arr.length;i++){
 				if(str == arr[i]){
 					res = i;
