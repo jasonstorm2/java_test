@@ -1,5 +1,7 @@
 package Chapter18_ClassLoadAndReflection;
 
+import sun.reflect.Reflection;
+
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
@@ -56,9 +58,11 @@ class MyInvokationHandler implements InvocationHandler{
 	
 }
 public class ProxyTest2 {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ClassNotFoundException {
 		//创建一个 InvocationHandler 对象
 		InvocationHandler handler = new MyInvokationHandler();
+		System.out.println("调用者的classloader:"+ Class.forName("Chapter18_ClassLoadAndReflection.ProxyTest2").getClassLoader());
+		System.out.println("Person2.class classLoader的名字："+Person2.class.getClassLoader().toString());
 		
 		//使用 指定的InvocationHandler 来生成一个动态代理对象
 		Object obj = Proxy.newProxyInstance(Person2.class.getClassLoader(), new Class[]{Person2.class,Person3.class}, handler);
