@@ -49,9 +49,9 @@ public class CompanyClient {
 
 
 
-    public Builder newBuilder() {
-        return new Builder(this);
-    }
+//    public Builder newBuilder() {
+//        return new Builder(this);
+//    }
 
     @Override
     public String toString() {
@@ -77,13 +77,13 @@ public class CompanyClient {
         public Builder() {
         }
         //构造方法
-        Builder(CompanyClient companyClient){
-            this.companyName = companyClient.companyName;
-            this.companyAddress = companyClient.companyAddress;
-            this.companyRegfunds = companyClient.companyRegfunds;
-            this.person = companyClient.mPerson;
-            this.type = companyClient.mType;
-        }
+//        Builder(CompanyClient companyClient){
+//            this.companyName = companyClient.companyName;
+//            this.companyAddress = companyClient.companyAddress;
+//            this.companyRegfunds = companyClient.companyRegfunds;
+//            this.person = companyClient.mPerson;
+//            this.type = companyClient.mType;
+//        }
 
         public Builder setCompanyName(String name) {
             companyName = name;

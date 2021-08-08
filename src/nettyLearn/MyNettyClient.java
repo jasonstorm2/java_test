@@ -1,7 +1,5 @@
 package nettyLearn;
 
-import java.util.Timer;
-
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -20,7 +18,7 @@ public class MyNettyClient {
 
     public static void main(String[] args) throws Exception {
 
-        String host = "localhost";
+        String host = "192.168.31.98";
         int port = 8080;
         EventLoopGroup workerGroup = new NioEventLoopGroup();
         try {        	

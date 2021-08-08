@@ -42,6 +42,14 @@ public enum EnumWeekDay {
 	public void putStingIn(String s){
 		System.out.println("the String put in:"+s);
 	}
+
+	@Override
+	public String toString() {
+		return "EnumWeekDay{" +
+				"day='" + day + '\'' +
+				", index=" + index +
+				'}';
+	}
 }
 
 

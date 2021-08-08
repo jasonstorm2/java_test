@@ -4,7 +4,9 @@ public class EnumWeekDayTest {
 	public static void main(String args[]){
 		//遍历枚举对象：.values()的使用
 		for(EnumWeekDay we:EnumWeekDay.values()){
-			System.out.println(we + "====>" + we.getDay()+"(index:"+we.getIndex()+")");		
+			System.out.println(we + "====>" + we.getDay()+"(index:"+we.getIndex()+")");
+			System.out.println(we.hashCode());
+
 		}
 		EnumWeekDay.printDay(6); 
 		EnumWeekDay.valueOf("Fri").printDay(5);

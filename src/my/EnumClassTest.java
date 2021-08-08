@@ -19,11 +19,16 @@ public class EnumClassTest {
 			Enum<?>[] enums = (Enum[])myEnum.getEnumConstants();
 			System.out.println("枚举长度："+enums.length);
 			for(Enum<?> e : enums){
+				System.out.println("-----------------");
 				System.out.println("e:"+e);
 				System.out.println("e.name:"+e.name());
+				myEnum myEnum1 = (myEnum)e;
+				myEnum1.printName();
+				myEnum1.printSomeThing();
 				
 				System.out.println("枚举所在类的名字："+e.getClass().getName());
 				result.add(e);
+
 			}
 			
 		} catch (ClassNotFoundException e) {
@@ -85,4 +90,44 @@ enum aEnum {
 	b,
 	c,
 	d
+}
+
+enum myEnum {
+	PEOPLE1("JSON"){
+		@Override
+		public void printName() {
+			//实现自定义的方法
+			System.out.println(name());
+		}
+	},
+	PEOPLE2("ANDROW"){
+		@Override
+		public void printName() {
+			System.out.println(name());
+		}
+	},
+	PEOPLE3("ELIZABER"){
+		@Override
+		public void printName() {
+			System.out.println(myEnum.PEOPLE3.name);
+		}
+	};
+	private String name;
+
+	public abstract void printName();
+
+	public void printSomeThing(){
+		System.out.println("haha");
+	}
+
+	private myEnum(String name){
+		this.name = name;
+	}
+
+	@Override
+	public String toString() {
+		return "myEnum{" +
+				"name='" + name + '\'' +
+				'}';
+	}
 }

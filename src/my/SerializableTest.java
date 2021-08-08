@@ -1,23 +1,18 @@
 package my;
 
 import java.io.Externalizable;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.ObjectInput;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
 import java.io.ObjectStreamException;
 import java.io.Serializable;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Properties;
 
 import utils.utils;
 
@@ -164,7 +159,7 @@ class Student implements Serializable{
 class Student2 implements Externalizable{
 	
 	 private static class InstanceHolder {
-	        private static final Student2 instatnce = new Student2("John", 31,"MALE",new ArrayList<Integer>(){{add(1);add(2);}},new Teacher1("ZhangHen",50));
+	        private static final Student2 instatnce = new Student2("John", 31,"MALE",new ArrayList<Integer>(){{add(1);add(2);}},new TeacherImpClonableExternalizable("ZhangHen",50));
 	    }
 
 	    public static Student2 getInstance() {
@@ -173,7 +168,7 @@ class Student2 implements Externalizable{
 	
 	    
 	    public static Student2 getInstance2() {//并非单例模式，每次调用都会生成一个新的对象
-	        return new Student2("John", 31,"MALE",new ArrayList<Integer>(){{add(1);add(2);}},new Teacher1("ZhangHen",50));
+	        return new Student2("John", 31,"MALE",new ArrayList<Integer>(){{add(1);add(2);}},new TeacherImpClonableExternalizable("ZhangHen",50));
 	    }
 	    
 	    /**
@@ -191,7 +186,7 @@ class Student2 implements Externalizable{
 	 */
 	private static final long serialVersionUID = 1L;
 	List<Integer> list;
-	Teacher1 t;
+	TeacherImpClonableExternalizable t;
 	String name;
 	transient int age ;
 	String sex;
@@ -200,7 +195,7 @@ class Student2 implements Externalizable{
 		System.out.println("Student无参数构造器");
 	}
 	
-	public Student2(String name,int age,String sex,List<Integer> list,Teacher1 t) {
+	public Student2(String name, int age, String sex, List<Integer> list, TeacherImpClonableExternalizable t) {
 		System.out.println("Student有参数构造器");
 		this.name = name;
 		this.age = age;
@@ -251,7 +246,7 @@ class Student2 implements Externalizable{
 		sex = (String) in.readObject();
 		age = in.readInt();
 //		list = (List<Integer>) in.readObject();
-		t = (Teacher1)in.readObject();
+		t = (TeacherImpClonableExternalizable)in.readObject();
 	}
 }
 
