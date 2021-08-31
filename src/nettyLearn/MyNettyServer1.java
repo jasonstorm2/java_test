@@ -98,6 +98,8 @@ public class MyNettyServer1 {
     
     //将规则跑起来
     public static void main(String[] args) throws Exception {
+        System.out.println("chines codelllllllll");
+        System.out.println("中文乱发测试。。。。。。");
     	//设置日志路径
     	System.setProperty("logPath", "log");
         int port;

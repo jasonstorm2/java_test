@@ -28,7 +28,7 @@ public class MyNettyClientHandler extends ChannelInboundHandlerAdapter {
 			e.printStackTrace();
 		}
 		ctx.writeAndFlush(20);
-		ctx.close(); //关闭channel连接
+//		ctx.close(); //关闭channel连接
 	}
 
     @Override

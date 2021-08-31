@@ -85,6 +85,7 @@ public class MyNettyServerHandler1 extends ChannelInboundHandlerAdapter {
      */
 	@Override
 	public void channelRead(ChannelHandlerContext ctx, Object msg){
+		System.out.printf("theadName.......："+Thread.currentThread().getName());
 		System.out.println("server的 channelRead方法被调用");
 	    try {
 	    	int m = (int)msg;
